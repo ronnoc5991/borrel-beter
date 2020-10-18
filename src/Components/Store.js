@@ -1,25 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { db } from '../firebase'
 
 function Store(props) {
 
-    const item = { //the items should be pulled from the database and displayed here in drawers
-        name: 'Chorizo',
-        description: 'Smoked Spanish sausage, seasoned with paprika',
-        id: 1,
-        price: 3.99
-    }
+    const [items, setItems] = useState(null);
+
+    useEffect(() => {
+        let itemsArray = [] //blank array to recieve items
+        db.collection('items').get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                itemsArray.push(doc.data());
+            })
+        })
+        setItems(itemsArray)
+    }, [])
 
     function addNewItem() {
-        props.addItem(item)
+        props.addItem(items[0])  //right now just adds the first item from the database
     }
 
     return (
         <div className="Store view">
-            Hello from Store
-            <hr/>
             <button onClick={addNewItem} >Add Item</button>
         </div>
     )
 }
 
 export default Store
+
+//need to display each item with image
