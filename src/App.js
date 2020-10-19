@@ -11,7 +11,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   function addItemToCart (item) {
-    let newCart = [...cart, item];
+    let newCart = [...cart, ...item]; //spreads the cart and the new item/items out and sets the new cart
     setCart(newCart);
   }
 
