@@ -1,12 +1,20 @@
 import React from 'react'
+import CartItem from './CartItem'
 
 function Cart(props) {
+
+    function prepareCart() {
+        //takes cart from props and sorts nicely?
+    }
+
     return (
         <div className="Cart view">
-            Hello from Cart
+            <div className="cart-title">
+                Your Order
+            </div>
 
             { props.cart.map((item) => {
-                return <div key={item.name} > { `${item.name[0].toUpperCase() + item.name.slice(1) }`  } </div>
+                return <CartItem item={ item } removeItem={ props.removeFunction } />
             }) }
         </div>
     )

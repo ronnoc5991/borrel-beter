@@ -6,27 +6,21 @@ import Snacks from './Snacks'
 
 function Store(props) {
 
-    // const [items, setItems] = useState(null);
+    const [drawers, setDrawers] = useState([false, false, false, false]);
 
-    // useEffect(() => {
-    //     let itemsArray = [] //blank array to recieve items
-    //     db.collection('items').get()
-    //     .then((querySnapshot) => {
-    //         querySnapshot.forEach((doc) => {
-    //             itemsArray.push(doc.data());
-    //         })
-    //     })
-    //     setItems(itemsArray)
-    // }, [])
-
+    function openDrawer (drawer, currentState) { //there is a more elegant solution...currently, each child compenent has to know its own place in the draweropen state
+        let newDrawers = [false, false, false, false];
+        newDrawers[drawer] = !currentState;
+        setDrawers(newDrawers);
+    }
 
     return (
         <div className="Store view" id="Store">
             <div className="drawer-container">
-                <Beers addItem={ props.addItem } />
-                <Cheeses addItem={ props.addItem } />
-                <Meats addItem={ props.addItem } />
-                <Snacks addItem={ props.addItem } />
+                <Beers addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[0]} />
+                <Cheeses addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[1]} />
+                <Meats addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[2]} />
+                <Snacks addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[3]} />
             </div>
         </div>
     )

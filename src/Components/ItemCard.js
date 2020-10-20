@@ -1,29 +1,24 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 
 function ItemCard(props) {
 
-    let image = useRef(null);
-
-    useEffect(() => {
-        Draggable.create(image, { // eslint-disable-line
-            bounds: document.getElementById("Store")
-        })
-    }, []) //this creates a draggable
+    // useEffect(() => {
+    //     Draggable.create(image, { // eslint-disable-line
+    //         bounds: document.getElementById("Store")
+    //     })
+    // }, []) 
 
 
     return (
-        <div className="ItemCard" onClick={ () => { props.addItem(props.item) } } >
+        <div className="ItemCard" onClick={ () => { props.addItem([props.item]) } } title={ props.item.description } >
 
-            <div className="item-image" ref={el => image = el}>
-                Image
+            <div className="item-image" >
+                <img src={ props.item.url } alt={ props.item.description } />
             </div>
+
 
             <div className="item-name">
                 {props.item.name[0].toUpperCase() + props.item.name.slice(1) }
-            </div>
-            
-            <div className="item-price">
-                {props.item.price}
             </div>
 
         </div>

@@ -5,7 +5,6 @@ import ItemCard from './ItemCard'
 function Beers(props) {
 
     const [beers, setBeers] = useState(null);
-    const [open, setOpen] = useState(false)
 
     useEffect(() => {
         let beersArray = [];
@@ -19,12 +18,8 @@ function Beers(props) {
         })
     }, [])
 
-    function addItemToCart (item) {
-        props.addItem([item])
-    }
-
     function handleClick() {
-        setOpen(!open)
+        props.openFunction(0, props.openState);
     }
 
     return (
@@ -34,10 +29,10 @@ function Beers(props) {
                 <h4>Beers</h4>
             </div>
 
-            <div className={`drawer ${open ? 'open' : 'closed'}`}>
+            <div className={`drawer ${props.openState ? 'open' : 'closed'}`}>
                 { beers && beers.map((beer) => {
 
-                    return <ItemCard addItem={ addItemToCart } item={beer} />
+                    return <ItemCard addItem={ props.addItem } item={beer} />
                 
                 }) }
             </div>

@@ -63,6 +63,7 @@ a, a:visited, a:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .Nav {
@@ -120,11 +121,12 @@ a, a:visited, a:active {
   border-right: 1px solid black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: black;
+  color: white;
 }
 
 .drawer-title {
   width: 100%;
-  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,41 +140,29 @@ a, a:visited, a:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: pointer;
+  border: 1px solid white;
 }
 
 .drawer {
-  background-color: orange;
-}
-
-.open {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.open .ItemCard {
-  height: 15vh;
-  border: 1px solid black;
-  color: black;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .closed .ItemCard {
-  height: 0vh;
-  color: transparent;
+  display: none;
 }
 
 .ItemCard {
-  width: 100%;
+  height: 20vh;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,18 +170,23 @@ a, a:visited, a:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.9);
-  -webkit-transition: color 300ms ease-in-out;
-  transition: color 300ms ease-in-out;
-  -webkit-transition: height 300ms ease-in-out;
-  transition: height 300ms ease-in-out;
+  border-radius: 2vmin;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid black;
+}
+
+.ItemCard .item-image {
+  height: 15vh;
+}
+
+.ItemCard .item-image img {
+  height: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

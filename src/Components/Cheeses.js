@@ -5,7 +5,6 @@ import ItemCard from './ItemCard'
 function Cheeses(props) {
 
     const [cheeses, setCheeses] = useState(null);
-    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         let cheeseArray = [];
@@ -24,7 +23,7 @@ function Cheeses(props) {
     }
 
     function handleClick () {
-        setOpen(!open)
+        props.openFunction(1, props.openState)
     }
 
     return (
@@ -34,8 +33,8 @@ function Cheeses(props) {
                 <h4>Cheeses</h4>
             </div>
 
-            <div className={`drawer ${ open ? 'open' : 'closed' }`}>
-                {  (cheeses && open) && cheeses.map((cheese) => {
+            <div className={`drawer ${ props.openState ? 'open' : 'closed' }`}>
+                { cheeses && cheeses.map((cheese) => {
                     return <ItemCard addItem={ addItemToCart } item={cheese} />
                 })}              
             </div>

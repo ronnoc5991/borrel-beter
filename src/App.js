@@ -15,8 +15,8 @@ function App() {
     setCart(newCart);
   }
 
-  function removeItemFromCart () { //find item in cart, then remove
-    
+  function removeItemFromCart (itemID) { //find item in cart, then remove
+
   }
 
   return (
@@ -32,11 +32,11 @@ function App() {
           </Route>
 
           <Route path="/store" exact>
-            <Store addItem={ addItemToCart } />
+            <Store addItem={ addItemToCart } cart={ cart } />
           </Route>
 
           <Route path="/cart" exact>
-            <Cart cart={ cart } />
+            <Cart cart={ cart } removeFunction={ removeItemFromCart } />
           </Route>
 
         </Switch>
