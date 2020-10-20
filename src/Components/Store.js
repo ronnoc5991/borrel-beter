@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { db } from '../firebase'
 import Beers from './Beers'
 import Cheeses from './Cheeses'
 import Meats from './Meats'
@@ -22,7 +21,7 @@ function Store(props) {
 
 
     return (
-        <div className="Store view">
+        <div className="Store view" id="Store">
             <div className="drawer-container">
                 <Beers addItem={ props.addItem } />
                 <Cheeses addItem={ props.addItem } />
@@ -35,5 +34,7 @@ function Store(props) {
 
 export default Store
 
-//need to display each item with image
 //incorporate local storage so the cart persists over sessions?
+//move open state to store component... pass down each drawers open state with props
+//create open state setter here and pass it down to drawer children
+//create function that closes drawers that are not needed and opens drawer that is selected

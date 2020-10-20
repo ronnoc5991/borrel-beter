@@ -115,7 +115,6 @@ a, a:visited, a:active {
 	min-width: 300px;
 	border-right: 1px solid black;
 	box-sizing: border-box;
-	overflow-y: scroll;
 }
 
 .drawer-title {
@@ -139,16 +138,18 @@ a, a:visited, a:active {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
+	
 	.ItemCard {
 		height: 15vh;
 		border: 1px solid black;
+		color: black;
 	}
 }
 
 .closed {
 	.ItemCard {
 		height: 0vh;
+		color: transparent;
 	}
 }
 
@@ -160,5 +161,6 @@ a, a:visited, a:active {
 	align-items: center;
 	box-sizing: border-box;
 	background-color: rgba($color: #ffffff, $alpha: .9);
-	transition: all 300ms ease-in-out;
+	transition: color 300ms ease-in-out;
+	transition: height 300ms ease-in-out;
 }

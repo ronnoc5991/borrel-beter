@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 
 function ItemCard(props) {
+
+    let image = useRef(null);
+
+    useEffect(() => {
+        Draggable.create(image, { // eslint-disable-line
+            bounds: document.getElementById("Store")
+        })
+    }, []) //this creates a draggable
+
+
     return (
         <div className="ItemCard" onClick={ () => { props.addItem(props.item) } } >
 
-            <div className="item-image">
-                -
+            <div className="item-image" ref={el => image = el}>
+                Image
             </div>
 
             <div className="item-name">

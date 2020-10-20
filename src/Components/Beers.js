@@ -35,7 +35,7 @@ function Beers(props) {
             </div>
 
             <div className={`drawer ${open ? 'open' : 'closed'}`}>
-                {  ( beers && open ) && beers.map((beer) => {
+                { beers && beers.map((beer) => {
 
                     return <ItemCard addItem={ addItemToCart } item={beer} />
                 
