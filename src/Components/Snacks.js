@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { db } from '../firebase'
+import ItemCard from './ItemCard'
 
 function Snacks(props) {
 
     const [snacks, setSnacks] = useState(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         let snackArray = [];
@@ -21,11 +23,23 @@ function Snacks(props) {
         props.addItem([item])
     }
 
+    function handleClick () {
+        setOpen(!open)
+    }
+
     return (
         <div className="Snacks">
-            {  snacks ? snacks.map((snack) => {
-                return <div key={snack.name} onClick={ () => addItemToCart(snack) }> { `${snack.name[0].toUpperCase() + snack.name.slice(1) }`  } </div>
-            }) : null }
+
+            <div className="drawer-title" onClick={ handleClick }>
+                <h4>Snacks</h4>
+            </div>
+
+            <div className={`drawer ${ open ? 'open' : 'closed' }`}>
+                {  (snacks && open) && snacks.map((snack) => {
+                    return <ItemCard addItem={ addItemToCart } item={snack} />
+                })}              
+            </div>
+
         </div>
     )
 }

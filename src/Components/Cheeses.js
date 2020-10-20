@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { db }  from '../firebase'
+import ItemCard from './ItemCard'
 
 function Cheeses(props) {
 
     const [cheeses, setCheeses] = useState(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         let cheeseArray = [];
@@ -21,11 +23,23 @@ function Cheeses(props) {
         props.addItem([item])
     }
 
+    function handleClick () {
+        setOpen(!open)
+    }
+
     return (
         <div className="Cheeses">
-            {  cheeses ? cheeses.map((cheese) => {
-                return <div key={cheese.name} onClick={ () => addItemToCart(cheese) } > { `${cheese.name[0].toUpperCase() + cheese.name.slice(1) }`  } </div>
-            }) : null }
+
+            <div className="drawer-title" onClick={ handleClick } >
+                <h4>Cheeses</h4>
+            </div>
+
+            <div className={`drawer ${ open ? 'open' : 'closed' }`}>
+                {  (cheeses && open) && cheeses.map((cheese) => {
+                    return <ItemCard addItem={ addItemToCart } item={cheese} />
+                })}              
+            </div>
+
         </div>
     )
 }

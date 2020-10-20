@@ -70,11 +70,10 @@ a, a:visited, a:active {
   width: 100vw;
   height: 8vh;
   top: 0;
-  -webkit-box-shadow: 0 0 .5vmin .1vmin black;
-          box-shadow: 0 0 .5vmin .1vmin black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-bottom: 1px solid black;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -84,6 +83,7 @@ a, a:visited, a:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 5vw 0 0;
+  z-index: 10;
 }
 
 .Nav ul {
@@ -97,10 +97,98 @@ a, a:visited, a:active {
 }
 
 .view {
-  margin: 8vh 0 0 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 92vh;
   width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.Store {
+  background-color: white;
+}
+
+.drawer-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 92vh;
+  width: 20vw;
+  min-width: 300px;
+  border-right: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.drawer-title {
+  width: 100%;
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.drawer {
+  background-color: orange;
+}
+
+.open {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.open .ItemCard {
+  height: 15vh;
+  border: 1px solid black;
+}
+
+.closed .ItemCard {
+  height: 0vh;
+}
+
+.ItemCard {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 /*# sourceMappingURL=styles.css.map */

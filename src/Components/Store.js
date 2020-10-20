@@ -23,10 +23,12 @@ function Store(props) {
 
     return (
         <div className="Store view">
-            <Beers addItem={ props.addItem } />
-            <Cheeses addItem={ props.addItem } />
-            <Meats addItem={ props.addItem } />
-            <Snacks addItem={ props.addItem } />
+            <div className="drawer-container">
+                <Beers addItem={ props.addItem } />
+                <Cheeses addItem={ props.addItem } />
+                <Meats addItem={ props.addItem } />
+                <Snacks addItem={ props.addItem } />
+            </div>
         </div>
     )
 }
@@ -34,3 +36,4 @@ function Store(props) {
 export default Store
 
 //need to display each item with image
+//incorporate local storage so the cart persists over sessions?

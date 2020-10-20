@@ -69,12 +69,13 @@ a, a:visited, a:active {
 	width: 100vw;
 	height: 8vh;
 	top: 0;
-	box-shadow: 0 0 .5vmin .1vmin black;
 	display: flex;
+	border-bottom: 1px solid black;
 	justify-content: flex-end;
 	align-items: center;
 	box-sizing: border-box;
 	padding: 0 5vw 0 0;
+	z-index: 10;
 
 	ul {
 		width: 200px;
@@ -89,8 +90,75 @@ a, a:visited, a:active {
 // ------------------------------------- General View Styles -------------------------------------
 
 .view {
-	margin: 8vh 0 0 0;
 	box-sizing: border-box;
 	height: 92vh;
 	width: 100vw;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+// --------------------------------------- Store view ------------------------------------------------
+
+.Store {
+	background-color: rgb(255, 255, 255);
+}
+
+// -------------------------------------- Drawer Styles ----------------------------------------------
+
+.drawer-container {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 92vh;
+	width: 20vw;
+	min-width: 300px;
+	border-right: 1px solid black;
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+.drawer-title {
+	width: 100%;
+	border: 1px solid red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.drawer {
+	background-color: orange;
+}
+
+.open {
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.ItemCard {
+		height: 15vh;
+		border: 1px solid black;
+	}
+}
+
+.closed {
+	.ItemCard {
+		height: 0vh;
+	}
+}
+
+.ItemCard {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	background-color: rgba($color: #ffffff, $alpha: .9);
+	transition: all 300ms ease-in-out;
 }
