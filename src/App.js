@@ -23,8 +23,6 @@ function App() {
     <Router>
       <div className="App">
 
-        <Nav cart={ cart } />
-
         <Switch>
 
           <Route path="/" exact>
@@ -32,10 +30,12 @@ function App() {
           </Route>
 
           <Route path="/store" exact>
+            <Nav cart={ cart } />
             <Store addItem={ addItemToCart } cart={ cart } />
           </Route>
 
           <Route path="/cart" exact>
+            <Nav cart={ cart } />
             <Cart cart={ cart } removeFunction={ removeItemFromCart } />
           </Route>
 

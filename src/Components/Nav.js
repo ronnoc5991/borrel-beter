@@ -16,9 +16,6 @@ function Nav(props) {
         <div className="Nav">
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
                     <Link to="/store">Plankjes</Link>
                 </li>
                 <li>
