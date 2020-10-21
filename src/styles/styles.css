@@ -184,15 +184,7 @@ a, a:visited, a:active {
           transform: translate(-50%, -50%);
 }
 
-@media (max-width: 1200px) {
-  .Home video {
-    left: auto;
-    top: 0;
-    right: 0;
-    -webkit-transform: translate(15%, 0%);
-            transform: translate(15%, 0%);
-  }
-}
+
 
 .Cart {
   height: 100%;
@@ -372,5 +364,14 @@ a, a:visited, a:active {
 
 .ItemCard .item-image img {
   height: 100%;
+}
+@media (max-width: 1200px) {
+  .Home video {
+    left: auto;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(15%, 0%);
+            transform: translate(15%, 0%);
+  }
 }
 /*# sourceMappingURL=styles.css.map */
