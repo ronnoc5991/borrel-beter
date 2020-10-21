@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/borrel-beter/static/css/main.6f780172.chunk.css",
+    "main.js": "/borrel-beter/static/js/main.1ce26349.chunk.js",
+    "main.js.map": "/borrel-beter/static/js/main.1ce26349.chunk.js.map",
+    "runtime-main.js": "/borrel-beter/static/js/runtime-main.d5f0c9f5.js",
+    "runtime-main.js.map": "/borrel-beter/static/js/runtime-main.d5f0c9f5.js.map",
+    "static/js/2.7a511f86.chunk.js": "/borrel-beter/static/js/2.7a511f86.chunk.js",
+    "static/js/2.7a511f86.chunk.js.map": "/borrel-beter/static/js/2.7a511f86.chunk.js.map",
+    "index.html": "/borrel-beter/index.html",
+    "precache-manifest.b0a7f6ffcde86fc329932c11ec8a146a.js": "/borrel-beter/precache-manifest.b0a7f6ffcde86fc329932c11ec8a146a.js",
+    "service-worker.js": "/borrel-beter/service-worker.js",
+    "static/css/main.6f780172.chunk.css.map": "/borrel-beter/static/css/main.6f780172.chunk.css.map",
+    "static/js/2.7a511f86.chunk.js.LICENSE.txt": "/borrel-beter/static/js/2.7a511f86.chunk.js.LICENSE.txt",
+    "static/media/video.mp4": "/borrel-beter/static/media/video.06ce422b.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d5f0c9f5.js",
+    "static/js/2.7a511f86.chunk.js",
+    "static/css/main.6f780172.chunk.css",
+    "static/js/main.1ce26349.chunk.js"
+  ]
+}
