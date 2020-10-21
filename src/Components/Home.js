@@ -41,7 +41,7 @@ function Home() {
                 <span className="beter" ref={ el=> beter = el }>beter.</span>
             </div>
 
-            <Link to="/store">
+            <Link to="/borrel-beter/store">
                 <div className="store-link" ref={ el => link =el }>
                     Plankjes
                 </div>

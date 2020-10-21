@@ -16,10 +16,10 @@ function Nav(props) {
         <div className="Nav">
             <ul>
                 <li>
-                    <Link to="/store">Plankjes</Link>
+                    <Link to="/borrel-beter/store">Plankjes</Link>
                 </li>
                 <li>
-                    <Link to="/cart">Cart { formatCartText(props.cart.length) } </Link>
+                    <Link to="/borrel-beter/cart">Cart { formatCartText(props.cart.length) } </Link>
                 </li>
             </ul>
         </div>

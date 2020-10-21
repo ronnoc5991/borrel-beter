@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './styles/styles.css';
+import '../styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Nav from './Components/Nav'
-import Home from './Components/Home'
-import Store from './Components/Store'
-import Cart from './Components/Cart'
+import Nav from './Nav'
+import Home from './Home'
+import Store from './Store'
+import Cart from './Cart'
 
 function App() {
 
@@ -25,16 +25,16 @@ function App() {
 
         <Switch>
 
-          <Route path="/" exact>
+          <Route path="/borrel-beter/" exact>
             <Home />
           </Route>
 
-          <Route path="/store" exact>
+          <Route path="/borrel-beter/store" exact>
             <Nav cart={ cart } />
             <Store addItem={ addItemToCart } cart={ cart } />
           </Route>
 
-          <Route path="/cart" exact>
+          <Route path="/borrel-beter/cart" exact>
             <Nav cart={ cart } />
             <Cart cart={ cart } removeFunction={ removeItemFromCart } />
           </Route>
