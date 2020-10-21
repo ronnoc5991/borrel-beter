@@ -1,18 +1,23 @@
 import React from 'react'
 
-function Plank() {
+function Plank(props) {
+
+    function addItem (item) {
+        props.addItem([item])
+    }
+
     return (
         <div className="Plank">
             <div className="plank-name">
-                Plank Name
+                { props.plank.name }
             </div>
             <div className="plank-description">
-                Plank Description
+                { props.plank.description }
             </div>
             <div className="plank-image">
-                Plank Image
+                <img src={ props.plank.imageUrl } alt=""/>
             </div>
-            <div className="add-plank">
+            <div className="add-plank" onClick={ () => { addItem(props.plank) } } >
                 Add to Cart
             </div>
         </div>

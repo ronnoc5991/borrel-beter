@@ -68,7 +68,7 @@ a, a:visited, a:active {
 
 .Nav {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 8vh;
   top: 0;
   display: -webkit-box;
@@ -84,6 +84,7 @@ a, a:visited, a:active {
           box-sizing: border-box;
   padding: 0 5vw 0 0;
   z-index: 10;
+  background-color: red;
 }
 
 .Nav ul {
@@ -96,19 +97,10 @@ a, a:visited, a:active {
           justify-content: space-between;
 }
 
-.view {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 92vh;
-  width: 100vw;
-  position: absolute;
-  top: 8vh;
-  left: 0;
-}
-
 .Home {
   overflow: hidden;
   height: 100vh;
+  width: 100vw;
 }
 
 .Home .container {
@@ -202,20 +194,30 @@ a, a:visited, a:active {
   }
 }
 
+.Cart {
+  height: 100%;
+  padding-top: 8vh;
+}
+
 .Store {
   background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  left: 0;
 }
 
 .Plank {
   height: 92vh;
-  background-color: orange;
-  border: 1px solid red;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
+  font-family: 'Nunito', sans-serif;
 }
 
 .Plank .plank-name {
@@ -231,9 +233,10 @@ a, a:visited, a:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 10vmin;
 }
 
 .Plank .plank-description {
@@ -268,6 +271,10 @@ a, a:visited, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.Plank .plank-image img {
+  width: 80%;
 }
 
 .Plank .add-plank {

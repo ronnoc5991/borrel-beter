@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import Plank from './Plank'
+import { db } from '../firebase' 
 
 function Store(props) {
 
-    //This should contain the three pre made plankjes and the link to create your own
+    const [plankjes, setPlankjes] = useState(null);
 
-    // The preset boards should be fetched here and displayed
-
-    //Custom board option should be displayed afterwards
-
-  
+    useEffect(() => {
+        let plankjesArray = [];
+        db.collection('plankjes').get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                plankjesArray.push(doc.data())
+            })
+            setPlankjes(plankjesArray);
+        })
+    }, [])
 
     return (
-        <div className="Store view" id="Store">
-           <Plank />
-           <Plank />
-           <Plank />
+        <div className="Store" id="Store">
+           { plankjes && plankjes.map((plankje) => {
+               return <Plank plank={ plankje } addItem={ props.addItem } />
+           }) }
         </div>
     )
 }

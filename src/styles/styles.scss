@@ -67,7 +67,7 @@ a, a:visited, a:active {
 
 .Nav {
 	position: fixed;
-	width: 100vw;
+	width: 100%;
 	height: 8vh;
 	top: 0;
 	display: flex;
@@ -76,6 +76,7 @@ a, a:visited, a:active {
 	box-sizing: border-box;
 	padding: 0 5vw 0 0;
 	z-index: 10;
+	background-color: red;
 	
 	ul {
 		width: 130px;
@@ -84,25 +85,12 @@ a, a:visited, a:active {
 	}
 }
 
-
-
-
-// ------------------------------------- General View Styles -------------------------------------
-
-.view {
-	box-sizing: border-box;
-	height: 92vh;
-	width: 100vw;
-	position: absolute;
-	top: 8vh;
-	left: 0;
-}
-
 // ------------------------------------------ Home View ----------------------------------------------
 
 .Home {
 	overflow: hidden;
 	height: 100vh;
+	width: 100vw;
 
 	.container {
 		position: absolute;
@@ -186,26 +174,39 @@ a, a:visited, a:active {
 	}
 }
 
+// ----------------------------------------- Cart --------------------------------------------
+
+.Cart {
+	height: 100%;
+	padding-top: 8vh;
+}
+
 // --------------------------------------- Store view ------------------------------------------------
 
 .Store {
 	background-color: rgb(255, 255, 255);
+	box-sizing: border-box;
+	width: 100%;
+	position: absolute;
+	left: 0;
 }
 
 .Plank {
 	height: 92vh;
-	background-color: orange;
-	border: 1px solid red;
+	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
+	font-family: 'Nunito', sans-serif;
+
 
 	.plank-name{
 		grid-column: 1 / 2;
 		grid-row: 1 / 2;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-end;
+		font-size: 10vmin;
 	}
 
 	.plank-description {
@@ -222,6 +223,10 @@ a, a:visited, a:active {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		img {
+			width: 80%;
+		}
 	}
 
 	.add-plank {

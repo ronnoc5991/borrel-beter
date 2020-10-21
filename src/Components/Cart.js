@@ -8,7 +8,7 @@ function Cart(props) {
     }
 
     return (
-        <div className="Cart view">
+        <div className="Cart">
             <div className="cart-title">
                 Your Order
             </div>
