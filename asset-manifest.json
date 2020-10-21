@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/borrel-beter/static/css/main.c4306c92.chunk.css",
-    "main.js": "/borrel-beter/static/js/main.1ce26349.chunk.js",
-    "main.js.map": "/borrel-beter/static/js/main.1ce26349.chunk.js.map",
-    "runtime-main.js": "/borrel-beter/static/js/runtime-main.d5f0c9f5.js",
-    "runtime-main.js.map": "/borrel-beter/static/js/runtime-main.d5f0c9f5.js.map",
-    "static/js/2.7a511f86.chunk.js": "/borrel-beter/static/js/2.7a511f86.chunk.js",
-    "static/js/2.7a511f86.chunk.js.map": "/borrel-beter/static/js/2.7a511f86.chunk.js.map",
-    "index.html": "/borrel-beter/index.html",
-    "precache-manifest.55eb1688394119ff3c819e25e9120266.js": "/borrel-beter/precache-manifest.55eb1688394119ff3c819e25e9120266.js",
-    "service-worker.js": "/borrel-beter/service-worker.js",
-    "static/css/main.c4306c92.chunk.css.map": "/borrel-beter/static/css/main.c4306c92.chunk.css.map",
-    "static/js/2.7a511f86.chunk.js.LICENSE.txt": "/borrel-beter/static/js/2.7a511f86.chunk.js.LICENSE.txt",
-    "static/media/video.mp4": "/borrel-beter/static/media/video.06ce422b.mp4"
+    "main.css": "./static/css/main.c4306c92.chunk.css",
+    "main.js": "./static/js/main.05264857.chunk.js",
+    "main.js.map": "./static/js/main.05264857.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.2322fb39.js",
+    "runtime-main.js.map": "./static/js/runtime-main.2322fb39.js.map",
+    "static/js/2.95e63fa3.chunk.js": "./static/js/2.95e63fa3.chunk.js",
+    "static/js/2.95e63fa3.chunk.js.map": "./static/js/2.95e63fa3.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.83d167bbfc85158bc6caee20ed852c22.js": "./precache-manifest.83d167bbfc85158bc6caee20ed852c22.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.c4306c92.chunk.css.map": "./static/css/main.c4306c92.chunk.css.map",
+    "static/js/2.95e63fa3.chunk.js.LICENSE.txt": "./static/js/2.95e63fa3.chunk.js.LICENSE.txt",
+    "static/media/video.mp4": "./static/media/video.06ce422b.mp4"
   },
   "entrypoints": [
-    "static/js/runtime-main.d5f0c9f5.js",
-    "static/js/2.7a511f86.chunk.js",
+    "static/js/runtime-main.2322fb39.js",
+    "static/js/2.95e63fa3.chunk.js",
     "static/css/main.c4306c92.chunk.css",
-    "static/js/main.1ce26349.chunk.js"
+    "static/js/main.05264857.chunk.js"
   ]
 }
