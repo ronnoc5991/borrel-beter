@@ -56,7 +56,7 @@ a, a:visited, a:active {
 // ------------------------------------- App -------------------------------------
 
 .App {
-	width: 100vw;
+	width: 100%;
 	min-height: 100vh;
 	box-sizing: border-box;
 	overflow: hidden;
@@ -76,12 +76,31 @@ a, a:visited, a:active {
 	box-sizing: border-box;
 	padding: 0 5vw 0 0;
 	z-index: 10;
-	background-color: red;
+	background-color: black;
+	box-shadow: 0 0 .5vmin .1vmin rgb(126, 126, 126);
 	
 	ul {
 		width: 130px;
+		height: 100%;
 		display: flex;
 		justify-content: space-between;
+		border: 1px solid black;
+
+		li {
+			border: 1px solid black;
+			display: flex;
+			align-items: center;
+
+			a, a:visited, a:active {
+				color: white;
+
+				svg {
+					color: white;
+					height: 100%;
+					width: 60%;
+				}
+			}
+		}
 	}
 }
 
@@ -94,10 +113,9 @@ a, a:visited, a:active {
 
 	.container {
 		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -114,7 +132,7 @@ a, a:visited, a:active {
 
 	.title {
 		position: absolute;
-		top: 50%;
+		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 
@@ -134,7 +152,7 @@ a, a:visited, a:active {
 	.store-link {
 		color: white;
 		position: absolute;
-		bottom: 10%;
+		top: 70%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		font-size: 4vmin;
@@ -155,21 +173,22 @@ a, a:visited, a:active {
 	
 	video {
 		position: fixed;
-		min-width: 100%;
-		min-height: 100%;
+		min-width: 100vw;
+		min-height: 100vh;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+		transform-origin: bottom left;
 	}
 }
 
-@media (max-width: 1200px) {
+@media screen  and (orientation: portrait) {
 	.Home {
 		video {
-			left: auto;
-			top: 0;
-			right: 0;
-			transform: translate(15%, 0%)
+			transform: rotate(90deg) translate(-110%, 50%);
+			min-width: 100vh;
+			min-height: 100vw;
+			object-fit: cover;
 		}
 	}
 }
@@ -187,55 +206,60 @@ a, a:visited, a:active {
 	background-color: rgb(255, 255, 255);
 	box-sizing: border-box;
 	width: 100%;
-	position: absolute;
-	left: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .Plank {
-	height: 92vh;
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
+	height: 100vh;
+	width: 80%;
 	font-family: 'Nunito', sans-serif;
+	display: flex;
 
+	.plank-info {
+		margin: auto 0;
+		height: 60%;
+		width: 40%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
 
 	.plank-name{
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-		font-size: 10vmin;
+		font-size: 7vmin;
+		width: 100%;
+		text-align: center;
 	}
 
 	.plank-description {
-		grid-column: 1 / 2;
-		grid-row: 2 / 3;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		// margin: auto;
+		width: 80%;
+		font-size: 2.5vmin;
+	}
+	
+	.add-plank {
+		margin: 0 auto;
+		width: 20%;
+		border: .5vmin solid black;
+		padding: 2vmin 4vmin;
+		border-radius: 5vmin;
+		cursor: pointer;
 	}
 
 	.plank-image {
-		grid-column: 2 / 3;
-		grid-row: 1 / -1;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		overflow: hidden;
 
 		img {
-			width: 80%;
+			width: 100%;
 		}
 	}
 
-	.add-plank {
-		grid-column: 1 / 2;
-		grid-row: 3 / 4;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
 }
 
 // -------------------------------------- Drawer Styles ----------------------------------------------

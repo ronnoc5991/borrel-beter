@@ -8,17 +8,19 @@ function Plank(props) {
 
     return (
         <div className="Plank">
-            <div className="plank-name">
-                { props.plank.name }
-            </div>
-            <div className="plank-description">
-                { props.plank.description }
+            <div className="plank-info">
+                <div className="plank-name">
+                    { props.plank.name }
+                </div>
+                <div className="plank-description">
+                    { props.plank.description }
+                </div>
+                <div className="add-plank" onClick={ () => { addItem(props.plank) } } >
+                    Add to Cart
+                </div>
             </div>
             <div className="plank-image">
                 <img src={ props.plank.imageUrl } alt=""/>
-            </div>
-            <div className="add-plank" onClick={ () => { addItem(props.plank) } } >
-                Add to Cart
             </div>
         </div>
     )
