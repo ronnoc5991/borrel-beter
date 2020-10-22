@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as CartImage}  from '../cart.svg'
+import CartImage  from '../cart.svg'
+import CartSidePanel from './CartSidePanel'
 
 
 function Nav(props) {
@@ -17,14 +18,17 @@ function Nav(props) {
         <div className="Nav">
             <ul>
                 <li>
-                    <Link to="/borrel-beter/store">Plankjes</Link>
+                    <Link to="/borrel-beter/store">
+                        Plankjes
+                    </Link>
                 </li>
                 <li>
                     <Link to="/borrel-beter/cart">
-                        <CartImage />
+                        <img src={ CartImage } alt=""/>
                     </Link>
                 </li>
             </ul>
+            { (props.cart.length > 0) && <CartSidePanel cart={ props.cart } /> }
         </div>
     )
 }

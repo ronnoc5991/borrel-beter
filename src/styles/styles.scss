@@ -70,36 +70,83 @@ a, a:visited, a:active {
 	width: 100%;
 	height: 8vh;
 	top: 0;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
 	box-sizing: border-box;
-	padding: 0 5vw 0 0;
 	z-index: 10;
 	background-color: black;
 	box-shadow: 0 0 .5vmin .1vmin rgb(126, 126, 126);
+	position: relative;
 	
 	ul {
-		width: 130px;
+		position: absolute;
+		right: 100px;
+		width: 15vw;
+		min-width: 140px;
 		height: 100%;
 		display: flex;
 		justify-content: space-between;
-		border: 1px solid black;
 
 		li {
-			border: 1px solid black;
 			display: flex;
 			align-items: center;
+			justify-content: center;
+			font-style: italic;
+			font-weight: bold;
+			overflow: hidden;
+			width: 7vw;
+			min-width: 70px;
+			font-size: 15px;
 
 			a, a:visited, a:active {
 				color: white;
+				display: flex;
+				height: 100%;
+				align-items: center;
 
-				svg {
-					color: white;
-					height: 100%;
-					width: 60%;
+				img {
+					filter: invert(100%) sepia(4%) saturate(17%) hue-rotate(77deg) brightness(103%) contrast(105%);
+					height: 50%;
+					margin: auto;
 				}
 			}
+		}
+	}
+
+	.CartSidePanel {
+		width: 100px;
+		height: 100vh;
+		position: fixed;
+		background-color: white;
+		top: 0;
+		right: -100px;
+		box-shadow: 0 0 .5vmin .1vmin rgb(126, 126, 126);
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+
+		.subtotal {
+			height: 8vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			padding-top: 1vmin;
+			font-weight: bold;
+			
+			.text {
+				font-size: 12px;
+			}
+
+			.total {
+				font-size: 16px;
+				color: rgb(199, 36, 36);
+			}
+		}
+
+		img	{
+			height: 5vh;
+			margin: 2vmin auto;
 		}
 	}
 }

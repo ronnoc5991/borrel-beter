@@ -71,26 +71,20 @@ a, a:visited, a:active {
   width: 100%;
   height: 8vh;
   top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0 5vw 0 0;
   z-index: 10;
   background-color: black;
   -webkit-box-shadow: 0 0 0.5vmin 0.1vmin #7e7e7e;
           box-shadow: 0 0 0.5vmin 0.1vmin #7e7e7e;
+  position: relative;
 }
 
 .Nav ul {
-  width: 130px;
+  position: absolute;
+  right: 100px;
+  width: 15vw;
+  min-width: 140px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,27 +92,100 @@ a, a:visited, a:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid black;
 }
 
 .Nav ul li {
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: italic;
+  font-weight: bold;
+  overflow: hidden;
+  width: 7vw;
+  min-width: 70px;
+  font-size: 15px;
 }
 
 .Nav ul li a, .Nav ul li a:visited, .Nav ul li a:active {
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.Nav ul li a svg, .Nav ul li a:visited svg, .Nav ul li a:active svg {
-  color: white;
-  height: 100%;
-  width: 60%;
+.Nav ul li a img, .Nav ul li a:visited img, .Nav ul li a:active img {
+  -webkit-filter: invert(100%) sepia(4%) saturate(17%) hue-rotate(77deg) brightness(103%) contrast(105%);
+          filter: invert(100%) sepia(4%) saturate(17%) hue-rotate(77deg) brightness(103%) contrast(105%);
+  height: 50%;
+  margin: auto;
+}
+
+.Nav .CartSidePanel {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  right: -100px;
+  -webkit-box-shadow: 0 0 0.5vmin 0.1vmin #7e7e7e;
+          box-shadow: 0 0 0.5vmin 0.1vmin #7e7e7e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Nav .CartSidePanel .subtotal {
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1vmin;
+  font-weight: bold;
+}
+
+.Nav .CartSidePanel .subtotal .text {
+  font-size: 12px;
+}
+
+.Nav .CartSidePanel .subtotal .total {
+  font-size: 16px;
+  color: #c72424;
+}
+
+.Nav .CartSidePanel img {
+  height: 5vh;
+  margin: 2vmin auto;
 }
 
 .Home {
