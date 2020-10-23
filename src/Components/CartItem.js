@@ -6,12 +6,18 @@ function CartItem(props) {
             <div className="item-name">
                 { props.item.name }
             </div>
-            <div className="item-price">
-                { props.item.price }
+
+            <div className="item-image">
+                <img src={ props.item.imageUrl } alt=""/>
             </div>
 
-            <div className="remove-button" onClick={ () => props.removeItem(props.item.id) } >
-                DELETE
+            <div className="item-price">
+                { `€ ${props.item.price}` }
+            </div>
+
+
+            <div className="remove-button" onClick={ () => props.removeItem(props.item.name) } >
+                Remove from Cart
             </div>
         </div>
     )

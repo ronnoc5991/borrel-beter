@@ -130,7 +130,7 @@ a, a:visited, a:active {
   margin: auto;
 }
 
-.Nav .CartSidePanel {
+.CartSidePanel {
   width: 100px;
   height: 100vh;
   position: fixed;
@@ -154,9 +154,10 @@ a, a:visited, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 11;
 }
 
-.Nav .CartSidePanel .subtotal {
+.CartSidePanel .subtotal {
   height: 8vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -174,16 +175,16 @@ a, a:visited, a:active {
   font-weight: bold;
 }
 
-.Nav .CartSidePanel .subtotal .text {
+.CartSidePanel .subtotal .text {
   font-size: 12px;
 }
 
-.Nav .CartSidePanel .subtotal .total {
+.CartSidePanel .subtotal .total {
   font-size: 16px;
   color: #c72424;
 }
 
-.Nav .CartSidePanel img {
+.CartSidePanel img {
   height: 5vh;
   margin: 2vmin auto;
 }
@@ -289,8 +290,91 @@ a, a:visited, a:active {
 }
 
 .Cart {
-  height: 100%;
+  min-height: 50vh;
   padding-top: 8vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Cart .cart-title {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 5vh auto;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Cart .cart-total {
+  width: 80%;
+  margin: 10vh auto 5vh auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Cart .cart-total h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 1vmin;
+}
+
+.Cart .CartItem {
+  width: 80%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1vh auto;
+}
+
+.Cart .CartItem .item-name {
+  width: 25%;
+  text-align: center;
+}
+
+.Cart .CartItem .item-price {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  text-align: center;
+}
+
+.Cart .CartItem .item-image {
+  width: 25%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Cart .CartItem .item-image img {
+  margin: auto;
+  height: 80%;
+}
+
+.Cart .CartItem .remove-button {
+  width: 25%;
+  cursor: pointer;
 }
 
 .Store {

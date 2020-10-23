@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react'
-import { getAllByDisplayValue } from '@testing-library/react';
 
 function CartSidePanel(props) {
 
@@ -13,7 +12,11 @@ function CartSidePanel(props) {
         let total = props.cart.reduce((acc, curr) => {
             return acc + curr.price
         }, 0)
-        return total
+        return Math.round(total * 100 ) / 100
+    }
+
+    function getUniqueKey () {
+        return '_' + Math.random().toString(36).substr(2, 9);
     }
 
     return (
@@ -28,7 +31,7 @@ function CartSidePanel(props) {
             </div>
 
             { props.cart.map((item) => {
-                return <img src={ item.imageUrl } alt=""/>
+                return <img src={ item.imageUrl } key ={ getUniqueKey() } title={ item.name } alt=""/>
             }) }
         </div>
     )

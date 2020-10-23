@@ -17,10 +17,14 @@ function Store(props) {
         })
     }, [])
 
+    function getUniqueKey () {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    }
+
     return (
         <div className="Store" id="Store">
            { plankjes && plankjes.map((plankje) => {
-               return <Plank plank={ plankje } addItem={ props.addItem } />
+               return <Plank key={ getUniqueKey() } plank={ plankje } addItem={ props.addItem } />
            }) }
         </div>
     )

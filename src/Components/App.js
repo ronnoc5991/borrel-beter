@@ -5,6 +5,8 @@ import Nav from './Nav'
 import Home from './Home'
 import Store from './Store'
 import Cart from './Cart'
+import CartSidePanel from './CartSidePanel'
+
 
 function App() {
 
@@ -15,8 +17,11 @@ function App() {
     setCart(newCart);
   }
 
-  function removeItemFromCart (itemID) { //find item in cart, then remove
-
+  function removeItemFromCart (itemName) { //find item in cart, then remove... should be implemented with ID numbers
+    let newCart = cart.filter((item) => {
+      return item.name !== itemName
+    })
+    setCart(newCart);
   }
 
   return (
@@ -32,6 +37,7 @@ function App() {
           <Route path="/borrel-beter/store" exact>
             <Nav cart={ cart } />
             <Store addItem={ addItemToCart } cart={ cart } />
+            { (cart.length > 0) && <CartSidePanel cart={ cart } /> }
           </Route>
 
           <Route path="/borrel-beter/cart" exact>

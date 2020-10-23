@@ -28,7 +28,7 @@ function Nav(props) {
                     </Link>
                 </li>
             </ul>
-            { (props.cart.length > 0) && <CartSidePanel cart={ props.cart } /> }
+            {/* { (props.cart.length > 0) && <CartSidePanel cart={ props.cart } /> } */}
         </div>
     )
 }

@@ -111,43 +111,45 @@ a, a:visited, a:active {
 		}
 	}
 
-	.CartSidePanel {
-		width: 100px;
-		height: 100vh;
-		position: fixed;
-		background-color: white;
-		top: 0;
-		right: -100px;
-		box-shadow: 0 0 .5vmin .1vmin rgb(126, 126, 126);
+}
+	
+.CartSidePanel {
+	width: 100px;
+	height: 100vh;
+	position: fixed;
+	background-color: white;
+	top: 0;
+	right: -100px;
+	box-shadow: 0 0 .5vmin .1vmin rgb(126, 126, 126);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	z-index: 11;
+
+	.subtotal {
+		height: 8vh;
 		display: flex;
 		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: flex-start;
+		justify-content: space-around;
 		align-items: center;
-
-		.subtotal {
-			height: 8vh;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			align-items: center;
-			padding-top: 1vmin;
-			font-weight: bold;
-			
-			.text {
-				font-size: 12px;
-			}
-
-			.total {
-				font-size: 16px;
-				color: rgb(199, 36, 36);
-			}
+		padding-top: 1vmin;
+		font-weight: bold;
+		
+		.text {
+			font-size: 12px;
 		}
 
-		img	{
-			height: 5vh;
-			margin: 2vmin auto;
+		.total {
+			font-size: 16px;
+			color: rgb(199, 36, 36);
 		}
+	}
+
+	img	{
+		height: 5vh;
+		margin: 2vmin auto;
 	}
 }
 
@@ -243,9 +245,75 @@ a, a:visited, a:active {
 // ----------------------------------------- Cart --------------------------------------------
 
 .Cart {
-	height: 100%;
+	min-height: 50vh;
 	padding-top: 8vh;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+
+	.cart-title {
+		width: 100%;
+		text-align: center;
+		margin: 0 auto 5vh auto;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.cart-total {
+		width: 80%;
+		margin: 10vh auto 5vh auto;
+		display: flex;
+		justify-content: center;
+
+		h3 {
+			font-size: 20px;
+			font-weight: bold;
+			margin: 0 1vmin;
+		}
+	}
+
+	.CartItem {
+		width: 80%;
+		height: 10vh;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 1vh auto;
+
+
+		.item-name {
+			width: 25%;
+			text-align: center;
+		}
+
+		.item-price {
+			flex-basis: 25%;
+			text-align: center;
+		}
+
+		.item-image {
+			width: 25%;
+			height: 100%;
+			display: flex;
+
+			img {
+				margin: auto;
+				height: 80%;
+			}
+		}
+
+		.remove-button {
+			width: 25%;
+			cursor: pointer;
+		}
+	}
+
+
+
 }
+
 
 // --------------------------------------- Store view ------------------------------------------------
 
