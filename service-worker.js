@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/borrel-beter/precache-manifest.b1c4defbcb77a6b9f8b20cfeaf2a3a6c.js"
+  "/borrel-beter/precache-manifest.b2487e1fdb79b0e06f9210a48dbcf8e9.js"
 );
 
 self.addEventListener('message', (event) => {
