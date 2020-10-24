@@ -8,7 +8,7 @@ function Nav(props) {
         <div className="Nav">
             <div className="logo">
                 <Link to="/borrel-beter/">
-                    <h1>Borrel <span>Beter</span></h1>
+                    <h1>BORREL BETER</h1>
                 </Link>
             </div>
             <ul>

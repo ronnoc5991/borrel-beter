@@ -62,6 +62,7 @@ a, a:visited, a:active {
 	--orange: #F2542D;
 	--blue: #18206F;
 	--yellow: #FFBA08;
+	--green: #003928;
 }
 
 // ------------------------------------- App -------------------------------------
@@ -71,7 +72,8 @@ a, a:visited, a:active {
 	min-height: 100vh;
 	box-sizing: border-box;
 	overflow: hidden;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Patrick Hand SC', cursive;
+
 }
 
 // ------------------------------------- Nav -------------------------------------
@@ -83,9 +85,7 @@ a, a:visited, a:active {
 	top: 0;
 	box-sizing: border-box;
 	z-index: 10;
-	background-color: var(--blue);
-	background: linear-gradient(90deg, rgba(0,16,154,1) 0%, rgba(24,32,111,1) 100%);
-	box-shadow: 0 0 .3vmin .1vmin rgb(126, 126, 126);
+	background-color: rgba($color: #F2542D, $alpha: .9);
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -93,19 +93,15 @@ a, a:visited, a:active {
 
 	.logo {
 		margin: auto auto auto 5vw;
-		font-size: 24px;
-
-		span {
-			font-weight: bold;
-			font-style: italic;
-		}
+		font-size: 28px;
+		font-weight: bold;
 	}
 
 	
 	
 	ul {
 		width: 15vw;
-		min-width: 110px;
+		min-width: 130px;
 		height: 100%;
 		display: flex;
 		justify-content: space-around;
@@ -119,7 +115,7 @@ a, a:visited, a:active {
 			font-weight: bold;
 			overflow: hidden;
 			width: 50%;
-			font-size: 14px;
+			font-size: 18px;
 
 			a, a:visited, a:active {
 				color: white;
@@ -178,7 +174,6 @@ a, a:visited, a:active {
 	overflow: hidden;
 	height: 100vh;
 	width: 100vw;
-	font-family: 'Nunito', sans-serif;
 
 	.container {
 		position: absolute;
@@ -343,6 +338,10 @@ a, a:visited, a:active {
 	justify-content: center;
 	flex-wrap: wrap;
 	font-family: 'Nunito', sans-serif;
+	background-color: black;
+	background-image: url(../blackboard.jpg);
+	background-size: 1000px;
+	color: white;
 }
 
 .Plank {
@@ -358,33 +357,35 @@ a, a:visited, a:active {
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
+		font-family: 'Patrick Hand SC', cursive;
 	}
 
 	.plank-name{
 		font-size: 5vmin;
 		width: 100%;
-		font-style: italic;
+		font-family: 'Homemade Apple', cursive;
 	}
 
 	.plank-description {
 		width: 100%;
-		font-size: 2vmin;
+		font-size: 20px;
 	}
 	
 	.add-plank {
 		margin: 0 auto;
 		width: 90px;
 		border: .5vmin solid var(--orange);
-		color: var(--orange);
 		padding: 2vmin 4vmin;
 		border-radius: 5vmin;
 		cursor: pointer;
 		transition: all 300ms ease-in-out;
+		text-align: center;
+		font-size: 18px;
+		color: white;
 	}
 
 	.add-plank:hover {
 		background-color: var(--orange);
-		color: white;
 	}
 
 
@@ -504,14 +505,12 @@ a, a:visited, a:active {
 		.plank-description {
 			width: 100%;
 			text-align: center;
-			font-size: 3vmin;
 		}
 		
 		.add-plank {
 			margin: 0 auto;
 			width: 90px;
 			border: .5vmin solid var(--orange);
-			color: var(--orange);
 			padding: 2vmin 4vmin;
 			border-radius: 5vmin;
 			cursor: pointer;
@@ -533,7 +532,7 @@ a, a:visited, a:active {
 			width: 100%;
 	
 			img {
-				width: 100%;
+				width: 80%;
 				margin: 5vh auto auto auto;
 			}
 		}
