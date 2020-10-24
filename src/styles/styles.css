@@ -57,13 +57,22 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
+* {
+  --lightest: #D6DEE2;
+  --light: #C2BAAD;
+  --dark: #38302E;
+  --orange: #F2542D;
+  --blue: #18206F;
+  --yellow: #FFBA08;
+}
+
 .App {
   width: 100%;
   min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 .Nav {
@@ -74,24 +83,41 @@ a, a:visited, a:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 10;
-  background-color: black;
-  -webkit-box-shadow: 0 0 0.5vmin 0.1vmin #7e7e7e;
-          box-shadow: 0 0 0.5vmin 0.1vmin #7e7e7e;
+  background-color: var(--blue);
+  background: -webkit-gradient(linear, left top, right top, from(#00109a), to(#18206f));
+  background: linear-gradient(90deg, #00109a 0%, #18206f 100%);
+  -webkit-box-shadow: 0 0 0.3vmin 0.1vmin #7e7e7e;
+          box-shadow: 0 0 0.3vmin 0.1vmin #7e7e7e;
   position: relative;
-}
-
-.Nav ul {
-  position: absolute;
-  right: 100px;
-  width: 15vw;
-  min-width: 140px;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  color: white;
+}
+
+.Nav .logo {
+  margin: auto auto auto 5vw;
+  font-size: 24px;
+}
+
+.Nav .logo span {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.Nav ul {
+  width: 15vw;
+  min-width: 110px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto 10vw auto auto;
 }
 
 .Nav ul li {
@@ -107,9 +133,8 @@ a, a:visited, a:active {
   font-style: italic;
   font-weight: bold;
   overflow: hidden;
-  width: 7vw;
-  min-width: 70px;
-  font-size: 15px;
+  width: 50%;
+  font-size: 14px;
 }
 
 .Nav ul li a, .Nav ul li a:visited, .Nav ul li a:active {
@@ -121,13 +146,6 @@ a, a:visited, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.Nav ul li a img, .Nav ul li a:visited img, .Nav ul li a:active img {
-  -webkit-filter: invert(100%) sepia(4%) saturate(17%) hue-rotate(77deg) brightness(103%) contrast(105%);
-          filter: invert(100%) sepia(4%) saturate(17%) hue-rotate(77deg) brightness(103%) contrast(105%);
-  height: 50%;
-  margin: auto;
 }
 
 .CartSidePanel {
@@ -193,6 +211,7 @@ a, a:visited, a:active {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  font-family: 'Nunito', sans-serif;
 }
 
 .Home .container {
@@ -216,7 +235,6 @@ a, a:visited, a:active {
   color: white;
   font-size: 8vmin;
   text-align: center;
-  font-family: 'Nunito', sans-serif;
   margin: 0 1vmin;
   opacity: 0;
 }
@@ -232,7 +250,6 @@ a, a:visited, a:active {
 .Home .title span {
   color: white;
   font-size: 12vmin;
-  font-family: 'Nunito', sans-serif;
   margin: 0 1vmin;
   opacity: 0;
 }
@@ -250,7 +267,6 @@ a, a:visited, a:active {
           transform: translate(-50%, -50%);
   font-size: 4vmin;
   text-align: center;
-  font-family: 'Nunito', sans-serif;
   padding: 2vmin 4vmin;
   border-radius: 5vmin;
   border: .5vmin solid white;
@@ -280,8 +296,8 @@ a, a:visited, a:active {
 
 @media screen and (orientation: portrait) {
   .Home video {
-    -webkit-transform: rotate(90deg) translate(-110%, 50%);
-            transform: rotate(90deg) translate(-110%, 50%);
+    -webkit-transform: rotate(90deg) translate(-115%, 50%);
+            transform: rotate(90deg) translate(-115%, 50%);
     min-width: 100vh;
     min-height: 100vw;
     -o-object-fit: cover;
@@ -391,12 +407,12 @@ a, a:visited, a:active {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  font-family: 'Nunito', sans-serif;
 }
 
 .Plank {
   height: 100vh;
   width: 80%;
-  font-family: 'Nunito', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,7 +421,7 @@ a, a:visited, a:active {
 .Plank .plank-info {
   margin: auto 0;
   height: 60%;
-  width: 40%;
+  width: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,23 +436,31 @@ a, a:visited, a:active {
 }
 
 .Plank .plank-name {
-  font-size: 7vmin;
+  font-size: 5vmin;
   width: 100%;
-  text-align: center;
+  font-style: italic;
 }
 
 .Plank .plank-description {
-  width: 80%;
-  font-size: 2.5vmin;
+  width: 100%;
+  font-size: 2vmin;
 }
 
 .Plank .add-plank {
   margin: 0 auto;
-  width: 20%;
-  border: .5vmin solid black;
+  width: 90px;
+  border: 0.5vmin solid var(--orange);
+  color: var(--orange);
   padding: 2vmin 4vmin;
   border-radius: 5vmin;
   cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.Plank .add-plank:hover {
+  background-color: var(--orange);
+  color: white;
 }
 
 .Plank .plank-image {
@@ -450,6 +474,7 @@ a, a:visited, a:active {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  width: 65%;
 }
 
 .Plank .plank-image img {
@@ -533,5 +558,82 @@ a, a:visited, a:active {
 
 .ItemCard .item-image img {
   height: 100%;
+}
+
+@media (max-width: 1025px) {
+  .Nav ul {
+    margin: auto 5vw auto auto;
+  }
+  .Plank {
+    height: 100vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .Plank .plank-info {
+    margin: 12vh auto 0 auto;
+    height: 30%;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .Plank .plank-name {
+    font-size: 6.5vmin;
+    width: 100%;
+    font-style: italic;
+    text-align: center;
+  }
+  .Plank .plank-description {
+    width: 100%;
+    text-align: center;
+    font-size: 3vmin;
+  }
+  .Plank .add-plank {
+    margin: 0 auto;
+    width: 90px;
+    border: 0.5vmin solid var(--orange);
+    color: var(--orange);
+    padding: 2vmin 4vmin;
+    border-radius: 5vmin;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  .Plank .add-plank:hover {
+    background-color: var(--orange);
+    color: white;
+  }
+  .Plank .plank-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 70%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  .Plank .plank-image img {
+    width: 100%;
+    margin: 5vh auto auto auto;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

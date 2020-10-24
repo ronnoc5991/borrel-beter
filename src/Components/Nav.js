@@ -1,21 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CartImage  from '../cart.svg'
-import CartSidePanel from './CartSidePanel'
 
 
 function Nav(props) {
 
-    function formatCartText (numberOfItems) {
-        if (numberOfItems > 0) {
-            return `(${numberOfItems})`
-        } else {
-            return ''
-        }
-    }
-
     return (
         <div className="Nav">
+            <div className="logo">
+                <Link to="/borrel-beter/">
+                    <h1>Borrel <span>Beter</span></h1>
+                </Link>
+            </div>
             <ul>
                 <li>
                     <Link to="/borrel-beter/store">
@@ -24,11 +19,10 @@ function Nav(props) {
                 </li>
                 <li>
                     <Link to="/borrel-beter/cart">
-                        <img src={ CartImage } alt=""/>
+                        Cart
                     </Link>
                 </li>
             </ul>
-            {/* { (props.cart.length > 0) && <CartSidePanel cart={ props.cart } /> } */}
         </div>
     )
 }

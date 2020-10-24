@@ -38,7 +38,7 @@ function Home() {
 
             <div className="title">
                 <span ref={ el => borrel = el }>Borrel</span>
-                <span className="beter" ref={ el=> beter = el }>beter.</span>
+                <span className="beter" ref={ el=> beter = el }>Beter</span>
             </div>
 
             <Link to="/borrel-beter/store">

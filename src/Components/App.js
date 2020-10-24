@@ -11,19 +11,31 @@ import CartSidePanel from './CartSidePanel'
 function App() {
 
   const [cart, setCart] = useState([]);
+  const [sideCart, setSideCart] = useState(false);
 
   function addItemToCart (item) {
-    let newCart = [...cart, ...item]; //spreads the cart and the new item/items out and sets the new cart
+    let newCart = [...cart, ...item];
     setCart(newCart);
   }
 
-  function removeItemFromCart (itemName) { //find item in cart, then remove... should be implemented with ID numbers
+  function removeItemFromCart (itemName) {
     let newCart = cart.filter((item) => {
       return item.name !== itemName
     })
     setCart(newCart);
   }
 
+  function shouldSideCartRender () {
+    console.log(window.innerWidth)
+    if (window.innerWidth > 1100) {
+      setSideCart(true)
+    } else {
+      setSideCart(false);
+    }
+  }
+
+  window.addEventListener('resize', shouldSideCartRender)
+  
   return (
     <Router>
       <div className="App">
@@ -37,7 +49,7 @@ function App() {
           <Route path="/borrel-beter/store" exact>
             <Nav cart={ cart } />
             <Store addItem={ addItemToCart } cart={ cart } />
-            { (cart.length > 0) && <CartSidePanel cart={ cart } /> }
+            { (cart.length > 0 && sideCart) && <CartSidePanel cart={ cart } /> }
           </Route>
 
           <Route path="/borrel-beter/cart" exact>

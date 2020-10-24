@@ -53,6 +53,17 @@ a, a:visited, a:active {
 	text-decoration: none;
 }
 
+// --------------------------------- Variables ----------------------------------
+
+* {
+	--lightest: #D6DEE2;
+	--light: #C2BAAD;
+	--dark: #38302E;
+	--orange: #F2542D;
+	--blue: #18206F;
+	--yellow: #FFBA08;
+}
+
 // ------------------------------------- App -------------------------------------
 
 .App {
@@ -60,7 +71,7 @@ a, a:visited, a:active {
 	min-height: 100vh;
 	box-sizing: border-box;
 	overflow: hidden;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Nunito', sans-serif;
 }
 
 // ------------------------------------- Nav -------------------------------------
@@ -72,18 +83,33 @@ a, a:visited, a:active {
 	top: 0;
 	box-sizing: border-box;
 	z-index: 10;
-	background-color: black;
-	box-shadow: 0 0 .5vmin .1vmin rgb(126, 126, 126);
+	background-color: var(--blue);
+	background: linear-gradient(90deg, rgba(0,16,154,1) 0%, rgba(24,32,111,1) 100%);
+	box-shadow: 0 0 .3vmin .1vmin rgb(126, 126, 126);
 	position: relative;
+	display: flex;
+	justify-content: space-between;
+	color: white;
+
+	.logo {
+		margin: auto auto auto 5vw;
+		font-size: 24px;
+
+		span {
+			font-weight: bold;
+			font-style: italic;
+		}
+	}
+
+	
 	
 	ul {
-		position: absolute;
-		right: 100px;
 		width: 15vw;
-		min-width: 140px;
+		min-width: 110px;
 		height: 100%;
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
+		margin: auto 10vw auto auto;
 
 		li {
 			display: flex;
@@ -92,21 +118,14 @@ a, a:visited, a:active {
 			font-style: italic;
 			font-weight: bold;
 			overflow: hidden;
-			width: 7vw;
-			min-width: 70px;
-			font-size: 15px;
+			width: 50%;
+			font-size: 14px;
 
 			a, a:visited, a:active {
 				color: white;
 				display: flex;
 				height: 100%;
 				align-items: center;
-
-				img {
-					filter: invert(100%) sepia(4%) saturate(17%) hue-rotate(77deg) brightness(103%) contrast(105%);
-					height: 50%;
-					margin: auto;
-				}
 			}
 		}
 	}
@@ -159,6 +178,7 @@ a, a:visited, a:active {
 	overflow: hidden;
 	height: 100vh;
 	width: 100vw;
+	font-family: 'Nunito', sans-serif;
 
 	.container {
 		position: absolute;
@@ -174,7 +194,6 @@ a, a:visited, a:active {
 		color: white;
 		font-size: 8vmin;
 		text-align: center;
-		font-family: 'Nunito', sans-serif;
 		margin: 0 1vmin;
 		opacity: 0;
 	}
@@ -188,7 +207,6 @@ a, a:visited, a:active {
 		span {
 			color: white;
 			font-size: 12vmin;
-			font-family: 'Nunito', sans-serif;
 			margin: 0 1vmin;
 			opacity: 0;
 		}
@@ -206,7 +224,6 @@ a, a:visited, a:active {
 		transform: translate(-50%, -50%);
 		font-size: 4vmin;
 		text-align: center;
-		font-family: 'Nunito', sans-serif;
 		padding: 2vmin 4vmin;
 		border-radius: 5vmin;
 		border: .5vmin solid white;
@@ -234,7 +251,7 @@ a, a:visited, a:active {
 @media screen  and (orientation: portrait) {
 	.Home {
 		video {
-			transform: rotate(90deg) translate(-110%, 50%);
+			transform: rotate(90deg) translate(-115%, 50%);
 			min-width: 100vh;
 			min-height: 100vw;
 			object-fit: cover;
@@ -325,18 +342,18 @@ a, a:visited, a:active {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	font-family: 'Nunito', sans-serif;
 }
 
 .Plank {
 	height: 100vh;
 	width: 80%;
-	font-family: 'Nunito', sans-serif;
 	display: flex;
 
 	.plank-info {
 		margin: auto 0;
 		height: 60%;
-		width: 40%;
+		width: 35%;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -344,31 +361,39 @@ a, a:visited, a:active {
 	}
 
 	.plank-name{
-		font-size: 7vmin;
+		font-size: 5vmin;
 		width: 100%;
-		text-align: center;
+		font-style: italic;
 	}
 
 	.plank-description {
-		// margin: auto;
-		width: 80%;
-		font-size: 2.5vmin;
+		width: 100%;
+		font-size: 2vmin;
 	}
 	
 	.add-plank {
 		margin: 0 auto;
-		width: 20%;
-		border: .5vmin solid black;
+		width: 90px;
+		border: .5vmin solid var(--orange);
+		color: var(--orange);
 		padding: 2vmin 4vmin;
 		border-radius: 5vmin;
 		cursor: pointer;
+		transition: all 300ms ease-in-out;
 	}
+
+	.add-plank:hover {
+		background-color: var(--orange);
+		color: white;
+	}
+
 
 	.plank-image {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
+		width: 65%;
 
 		img {
 			width: 100%;
@@ -442,5 +467,76 @@ a, a:visited, a:active {
 		img {
 			height: 100%;
 		}
+	}
+}
+
+@media (max-width: 1025px) {
+
+	.Nav {
+		ul {
+			margin: auto 5vw auto auto;
+		}
+	}
+
+	.Plank {
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	
+		.plank-info {
+			margin: 12vh auto 0 auto;
+			height: 30%;
+			width: 90%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+	
+		.plank-name{
+			font-size: 6.5vmin;
+			width: 100%;
+			font-style: italic;
+			text-align: center;
+		}
+	
+		.plank-description {
+			width: 100%;
+			text-align: center;
+			font-size: 3vmin;
+		}
+		
+		.add-plank {
+			margin: 0 auto;
+			width: 90px;
+			border: .5vmin solid var(--orange);
+			color: var(--orange);
+			padding: 2vmin 4vmin;
+			border-radius: 5vmin;
+			cursor: pointer;
+			transition: all 300ms ease-in-out;
+		}
+	
+		.add-plank:hover {
+			background-color: var(--orange);
+			color: white;
+		}
+	
+	
+		.plank-image {
+			display: flex;
+			height: 70%;
+			justify-content: flex-start;
+			align-items: center;
+			overflow: hidden;
+			width: 100%;
+	
+			img {
+				width: 100%;
+				margin: 5vh auto auto auto;
+			}
+		}
+	
 	}
 }
