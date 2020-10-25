@@ -85,7 +85,7 @@ a, a:visited, a:active {
 	top: 0;
 	box-sizing: border-box;
 	z-index: 10;
-	background-color: rgba($color: #F2542D, $alpha: .9);
+	background-color: var(--yellow);
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -96,8 +96,6 @@ a, a:visited, a:active {
 		font-size: 28px;
 		font-weight: bold;
 	}
-
-	
 	
 	ul {
 		width: 15vw;
@@ -330,7 +328,6 @@ a, a:visited, a:active {
 // --------------------------------------- Store view ------------------------------------------------
 
 .Store {
-	background-color: rgb(255, 255, 255);
 	box-sizing: border-box;
 	width: 100%;
 	overflow: hidden;
@@ -374,7 +371,7 @@ a, a:visited, a:active {
 	.add-plank {
 		margin: 0 auto;
 		width: 90px;
-		border: .5vmin solid var(--orange);
+		border: .5vmin solid var(--yellow);
 		padding: 2vmin 4vmin;
 		border-radius: 5vmin;
 		cursor: pointer;
@@ -385,7 +382,7 @@ a, a:visited, a:active {
 	}
 
 	.add-plank:hover {
-		background-color: var(--orange);
+		background-color: var(--yellow);
 	}
 
 

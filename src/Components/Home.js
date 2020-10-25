@@ -15,10 +15,10 @@ function Home() {
 
     useEffect(() => {
         const tl = gsap.timeline(); //eslint-disable-line
-        tl.to(borrelen, {opacity: 1, duration: .5, delay: 2});
+        tl.to(borrelen, {opacity: 1, duration: .5, delay: 1});
         tl.to(is, {opacity: 1, duration: .5});
         tl.to(belangrijk, {opacity: 1, duration: .5});
-        tl.to(container, {opacity: 0, duration: .5, delay: 1});
+        tl.to(container, {opacity: 0, duration: .5, delay: .8});
         tl.to(borrel, {opacity: 1, duration: .5});
         tl.to(beter, {opacity: 1, duration: .5});
         tl.to(link, {opacity: 1, duration: .5});

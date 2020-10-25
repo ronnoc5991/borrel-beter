@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Nav from './Nav'
@@ -33,6 +33,10 @@ function App() {
       setSideCart(false);
     }
   }
+
+  useEffect(() => {
+    shouldSideCartRender();
+  }, [])
 
   window.addEventListener('resize', shouldSideCartRender)
   

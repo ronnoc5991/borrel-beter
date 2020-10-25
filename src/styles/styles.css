@@ -84,7 +84,7 @@ a, a:visited, a:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 10;
-  background-color: rgba(242, 84, 45, 0.9);
+  background-color: var(--yellow);
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -386,7 +386,6 @@ a, a:visited, a:active {
 }
 
 .Store {
-  background-color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -446,7 +445,7 @@ a, a:visited, a:active {
 .Plank .add-plank {
   margin: 0 auto;
   width: 90px;
-  border: 0.5vmin solid var(--orange);
+  border: 0.5vmin solid var(--yellow);
   padding: 2vmin 4vmin;
   border-radius: 5vmin;
   cursor: pointer;
@@ -458,7 +457,7 @@ a, a:visited, a:active {
 }
 
 .Plank .add-plank:hover {
-  background-color: var(--orange);
+  background-color: var(--yellow);
 }
 
 .Plank .plank-image {
