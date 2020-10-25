@@ -26,7 +26,6 @@ function App() {
   }
 
   function shouldSideCartRender () {
-    console.log(window.innerWidth)
     if (window.innerWidth > 1100) {
       setSideCart(true)
     } else {

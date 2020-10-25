@@ -17,7 +17,7 @@ function CartItem(props) {
 
 
             <div className="remove-button" onClick={ () => props.removeItem(props.item.name) } >
-                Remove from Cart
+                <i class="fa fa-lg fa-trash"></i>
             </div>
         </div>
     )
