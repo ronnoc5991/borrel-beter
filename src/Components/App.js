@@ -51,18 +51,18 @@ function App() {
           </Route>
 
           <Route path="/borrel-beter/store" exact>
-            <Nav />
+            {/* <Nav /> */}
             <Store addItem={ addItemToCart } cart={ cart } />
             { (cart.length > 0 && sideCart) && <CartSidePanel cart={ cart } /> }
           </Route>
 
           <Route path="/borrel-beter/cart" exact>
-            <Nav />
+            {/* <Nav /> */}
             <Cart cart={ cart } removeFunction={ removeItemFromCart } />
           </Route>
 
           <Route path="/borrel-beter/customize" exact>
-            <Nav />
+            {/* <Nav /> */}
             <CustomPlank  addItem={ addItemToCart } />
           </Route>
 

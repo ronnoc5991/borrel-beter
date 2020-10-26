@@ -18,20 +18,12 @@ function Cheeses(props) {
         })
     }, [])
 
-    function handleClick () {
-        props.openFunction(1, props.openState)
-    }
-
     function getUniqueKey () {
         return '_' + Math.random().toString(36).substr(2, 9);
     }
 
     return (
         <div className="Cheeses">
-
-            <div className="drawer-title" onClick={ handleClick } >
-                <h4>Cheeses</h4>
-            </div>
 
             <div className={`drawer ${ props.openState ? 'open' : 'closed' }`}>
                 { cheeses && cheeses.map((cheese) => {

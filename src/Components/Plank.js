@@ -7,6 +7,14 @@ function Plank(props) {
         props.addItem([item])
     }
 
+    function inCart (item) {
+        if (props.cart.includes(item)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
         <div className="Plank" id={ `plank-${props.index}` }>
             <div className="plank-info">
@@ -16,13 +24,23 @@ function Plank(props) {
                 <div className="plank-description">
                     { props.plank.description }
                 </div>
-                { props.plank.name==="Make Your Own!" ? 
-                 <Link to="/borrel-beter/customize"><div className="add-plank"> Customize! </div></Link>
-                :  
-                <div className="add-plank" onClick={ () => { addItem(props.plank) } } >
-                    Add to Cart
-                </div>
+
+                { props.plank.name === "Make Your Own!" && 
+                    <Link to="/borrel-beter/customize">
+                        <div className="add-plank"> Customize! </div>
+                    </Link>
                 }
+
+                { inCart(props.plank) ? 
+                    <div className="added-plank" >
+                        In Cart
+                    </div>
+                :
+                    <div className="add-plank" onClick={ () => { addItem(props.plank) } } >
+                        Add to Cart
+                    </div> 
+                }
+                
 
             </div>
             <div className="plank-image">

@@ -66,6 +66,7 @@ a, a:visited, a:active {
   --yellow: #FFBA08;
   --green: #003928;
   --red: #d22328;
+  --red-orange: #cf3f1c;
 }
 
 .App {
@@ -80,11 +81,11 @@ a, a:visited, a:active {
   left: 0;
 }
 
-.Nav .menu-button {
+.menu-button {
   position: fixed;
   top: 2vh;
   left: 2vh;
-  background-color: var(--yellow);
+  background-color: var(--green);
   -webkit-box-shadow: 0 0 1vmin 0.1vmin #747474;
           box-shadow: 0 0 1vmin 0.1vmin #747474;
   color: white;
@@ -104,64 +105,8 @@ a, a:visited, a:active {
   z-index: 100;
 }
 
-.Nav .menu {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: -100vw;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  z-index: 10;
-  background-color: black;
-  color: white;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-.Nav .open {
-  -webkit-transform: translate(100vw, 0);
-          transform: translate(100vw, 0);
-}
-
-.Nav ul {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: auto;
-}
-
-.Nav ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-weight: bold;
-  font-size: 20vmin;
-}
-
-.Nav ul li a, .Nav ul li a:visited, .Nav ul li a:active {
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.second {
+  top: 12vh;
 }
 
 .CartSidePanel {
@@ -532,6 +477,21 @@ a, a:visited, a:active {
   color: white;
 }
 
+.Plank .added-plank {
+  margin: 0 auto;
+  width: 120px;
+  border: 0.5vmin solid var(--green);
+  padding: 2vmin 3vmin;
+  border-radius: 5vmin;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  background-color: var(--green);
+}
+
 .Plank .plank-image {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -561,18 +521,27 @@ a, a:visited, a:active {
 .drawer-container {
   position: fixed;
   left: 0;
-  bottom: 0;
+  top: 80vh;
   height: 20vh;
   width: 100vw;
-  min-width: 300px;
-  border-right: 1px solid black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: black;
+  background-color: var(--green);
   color: white;
 }
 
+.drawer-titles {
+  position: absolute;
+  top: -5vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .drawer-title {
+  width: 20vw;
+  height: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -586,18 +555,17 @@ a, a:visited, a:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: pointer;
-  border: 1px solid white;
+  background-color: var(--green);
+  border-top-left-radius: 8vmin;
+  border-top-right-radius: 8vmin;
+  -webkit-box-shadow: 0 -0.3vmin 0.8vmin 0.1vmin #686868;
+          box-shadow: 0 -0.3vmin 0.8vmin 0.1vmin #686868;
 }
 
 .drawer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
@@ -608,7 +576,7 @@ a, a:visited, a:active {
 
 .ItemCard {
   height: 20vh;
-  width: 50%;
+  width: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -630,7 +598,7 @@ a, a:visited, a:active {
 }
 
 .ItemCard .item-image {
-  height: 15vh;
+  height: 8vh;
 }
 
 .ItemCard .item-image img {

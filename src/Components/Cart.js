@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CartItem from './CartItem'
 
 function Cart(props) {
@@ -16,6 +17,13 @@ function Cart(props) {
 
     return (
         <div className="Cart">
+
+            <Link to="/borrel-beter/store">
+                <div className="menu-button">
+                    Store
+                </div>
+            </Link>
+
             <div className="cart-title">
                 Your Order
             </div>
@@ -33,6 +41,7 @@ function Cart(props) {
 }
 
 export default Cart
+
 
 //cart needs to take into account multiple items of the same type
 //calculate price

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Beers from './Beers'
 import Cheeses from './Cheeses'
 import Meats from './Meats'
@@ -6,7 +7,7 @@ import Snacks from './Snacks'
 
 function CustomPlank(props) {
 
-    const [drawers, setDrawers] = useState([false, false, false, false]);
+    const [drawers, setDrawers] = useState([true, false, false, false]);
 
 
     function openDrawer (drawer, currentState) { //there is a more elegant solution...currently, each child compenent has to know its own place in the draweropen state
@@ -17,11 +18,38 @@ function CustomPlank(props) {
 
     return (
         <div className="CustomPlank" >
+
+            <Link to="/borrel-beter/store">
+                <div className="menu-button">
+                    Store
+                </div>
+            </Link>
+
+            <Link to="/borrel-beter/cart">
+                <div className="menu-button second">
+                    Cart
+                </div>
+            </Link>
+
             <div className="drawer-container">
-                <Beers openFunction={ openDrawer } openState={drawers[0]} />
-                <Cheeses openFunction={ openDrawer } openState={drawers[1]} />
-                <Meats openFunction={ openDrawer } openState={drawers[2]} />
-                <Snacks openFunction={ openDrawer } openState={drawers[3]} />
+                <div className="drawer-titles">
+                    <div className="drawer-title" onClick={ () => openDrawer(0, drawers[0]) }>
+                        <h4>Beers</h4>
+                    </div>
+                    <div className="drawer-title" onClick={ () => openDrawer(1, drawers[1]) }>
+                        <h4>Cheeses</h4>
+                    </div>
+                    <div className="drawer-title" onClick={ () => openDrawer(2, drawers[2]) }>
+                        <h4>Meats</h4>
+                    </div>
+                    <div className="drawer-title" onClick={ () => openDrawer(3, drawers[3]) }>
+                        <h4>Snacks</h4>
+                    </div>
+                </div>
+                <Beers openState={ drawers[0] } />
+                <Cheeses openState={drawers[1]} />
+                <Meats openState={drawers[2]} />
+                <Snacks openState={drawers[3]} />
             </div>
         </div>
     )

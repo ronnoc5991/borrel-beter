@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import Plank from './Plank'
 import { db } from '../firebase' 
 
@@ -43,8 +44,15 @@ function Store(props) {
 
     return (
         <div className="Store" >
+
+            <Link to="/borrel-beter/cart">
+                <div className="menu-button">
+                    Cart
+                </div>
+            </Link>
+
            { plankjes && plankjes.map((plankje, index) => {
-               return <Plank index={ index } key={ getUniqueKey() } plank={ plankje } addItem={ props.addItem } />
+               return <Plank index={ index } cart={ props.cart } key={ getUniqueKey() } plank={ plankje } addItem={ props.addItem } />
            }) }
 
            <div className="store-nav" ref={ el => smallNav = el }>

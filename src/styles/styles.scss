@@ -64,6 +64,7 @@ a, a:visited, a:active {
 	--yellow: #FFBA08;
 	--green: #003928;
 	--red: #d22328;
+	--red-orange: #cf3f1c;
 }
 
 // ------------------------------------- App -------------------------------------
@@ -79,69 +80,28 @@ a, a:visited, a:active {
 	left: 0;
 }
 
-// ------------------------------------- Nav -------------------------------------
-
-.Nav {
-
-	.menu-button {
-		position: fixed;
-		top: 2vh;
-		left: 2vh;
-		background-color: var(--yellow);
-		box-shadow: 0 0 1vmin .1vmin rgb(116, 116, 116);
-		color: white;
-		height: 8vh;
-		width: 8vh;
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		z-index: 100;
-	}
-
-	.menu {
-		position: fixed;
-		width: 100vw;
-		height: 100vh;
-		top: 0;
-		left: -100vw;
-		box-sizing: border-box;
-		z-index: 10;
-		background-color: black;
-		color: white;
-		transition: all 300ms ease-in-out;
-	}
-
-	.open {
-		transform: translate(100vw, 0);
-	}
-	
-	ul {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		margin: auto;
-
-		li {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-weight: bold;
-			font-size: 20vmin;
-
-			a, a:visited, a:active {
-				color: white;
-				display: flex;
-				height: 100%;
-				align-items: center;
-			}
-		}
-	}
-
+.menu-button {
+	position: fixed;
+	top: 2vh;
+	left: 2vh;
+	background-color: var(--green);
+	box-shadow: 0 0 1vmin .1vmin rgb(116, 116, 116);
+	color: white;
+	height: 8vh;
+	width: 8vh;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 100;
 }
+
+.second {
+	top: 12vh;
+}
+
+// ------------------------------------- Side Cart Panel -------------------------------------
 	
 .CartSidePanel {
 	width: 100px;
@@ -442,6 +402,20 @@ a, a:visited, a:active {
 		color: white;
 	}
 
+	.added-plank {
+		margin: 0 auto;
+		width: 120px;
+		border: .5vmin solid var(--green);
+		padding: 2vmin 3vmin;
+		border-radius: 5vmin;
+		cursor: pointer;
+		transition: all 300ms ease-in-out;
+		text-align: center;
+		font-size: 24px;
+		color: white;
+		background-color: var(--green);
+	}
+
 
 	.plank-image {
 		display: flex;
@@ -470,36 +444,43 @@ a, a:visited, a:active {
 .drawer-container {
 	position: fixed;
 	left: 0;
-	bottom: 0;
+	top: 80vh;
 	height: 20vh;
 	width: 100vw;
-	min-width: 300px;
-	border-right: 1px solid black;
 	box-sizing: border-box;
-	background-color: black;
+	background-color: var(--green);
 	color: white;
 }
 
+.drawer-titles {
+	position: absolute;
+	top: -5vh;
+	width: 100vw;
+	display: flex;
+}
+
 .drawer-title {
-	// width: ;
+	width: 20vw;
+	height: 5vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 12px;
 	box-sizing: border-box;
 	cursor: pointer;
-	border: 1px solid rgb(255, 255, 255);
+	background-color: var(--green);
+	border-top-left-radius: 8vmin;
+	border-top-right-radius: 8vmin;
+	box-shadow: 0 -.3vmin .8vmin .1vmin rgb(104, 104, 104);
 }
 
 .drawer {
 	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
 	transition: all 300ms ease-in-out;
 }
 
 .open {
-	
+
 	.ItemCard {
 		//
 	}
@@ -514,7 +495,7 @@ a, a:visited, a:active {
 
 .ItemCard {
 	height: 20vh;
-	width: 50%;
+	width: 20vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -526,7 +507,7 @@ a, a:visited, a:active {
 	cursor: pointer;
 
 	.item-image {
-		height: 15vh;
+		height: 8vh;
 
 		img {
 			height: 100%;
