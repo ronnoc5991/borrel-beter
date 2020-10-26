@@ -22,6 +22,10 @@ function Beers(props) {
         props.openFunction(0, props.openState);
     }
 
+    function getUniqueKey () {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    }
+
     return (
         <div className="Beers" >
 
@@ -32,7 +36,7 @@ function Beers(props) {
             <div className={`drawer ${props.openState ? 'open' : 'closed'}`}>
                 { beers && beers.map((beer) => {
 
-                    return <ItemCard addItem={ props.addItem } item={beer} />
+                    return <ItemCard key={ getUniqueKey() } item={beer} />
                 
                 }) }
             </div>

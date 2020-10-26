@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Nav from './Nav'
 import Home from './Home'
 import Store from './Store'
+import CustomPlank from './CustomPlank'
 import Cart from './Cart'
 import CartSidePanel from './CartSidePanel'
 
@@ -50,14 +51,19 @@ function App() {
           </Route>
 
           <Route path="/borrel-beter/store" exact>
-            <Nav cart={ cart } />
+            <Nav />
             <Store addItem={ addItemToCart } cart={ cart } />
             { (cart.length > 0 && sideCart) && <CartSidePanel cart={ cart } /> }
           </Route>
 
           <Route path="/borrel-beter/cart" exact>
-            <Nav cart={ cart } />
+            <Nav />
             <Cart cart={ cart } removeFunction={ removeItemFromCart } />
+          </Route>
+
+          <Route path="/borrel-beter/customize" exact>
+            <Nav />
+            <CustomPlank  addItem={ addItemToCart } />
           </Route>
 
         </Switch>

@@ -18,12 +18,12 @@ function Cheeses(props) {
         })
     }, [])
 
-    function addItemToCart (item) {
-        props.addItem([item])
-    }
-
     function handleClick () {
         props.openFunction(1, props.openState)
+    }
+
+    function getUniqueKey () {
+        return '_' + Math.random().toString(36).substr(2, 9);
     }
 
     return (
@@ -35,7 +35,7 @@ function Cheeses(props) {
 
             <div className={`drawer ${ props.openState ? 'open' : 'closed' }`}>
                 { cheeses && cheeses.map((cheese) => {
-                    return <ItemCard addItem={ addItemToCart } item={cheese} />
+                    return <ItemCard key={ getUniqueKey() } item={cheese} />
                 })}              
             </div>
 

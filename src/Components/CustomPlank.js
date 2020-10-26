@@ -18,13 +18,16 @@ function CustomPlank(props) {
     return (
         <div className="CustomPlank" >
             <div className="drawer-container">
-                <Beers addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[0]} />
-                <Cheeses addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[1]} />
-                <Meats addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[2]} />
-                <Snacks addItem={ props.addItem } openFunction={ openDrawer } openState={drawers[3]} />
+                <Beers openFunction={ openDrawer } openState={drawers[0]} />
+                <Cheeses openFunction={ openDrawer } openState={drawers[1]} />
+                <Meats openFunction={ openDrawer } openState={drawers[2]} />
+                <Snacks openFunction={ openDrawer } openState={drawers[3]} />
             </div>
         </div>
     )
 }
 
 export default CustomPlank
+
+//user should select 2 cheeses, 2 meats, 2 snacks and 1 beer
+// then they should be prompted to add to cart

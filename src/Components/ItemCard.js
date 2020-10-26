@@ -10,7 +10,7 @@ function ItemCard(props) {
 
 
     return (
-        <div className="ItemCard" onClick={ () => { props.addItem([props.item]) } } title={ props.item.description } >
+        <div className="ItemCard" title={ props.item.description } >
 
             <div className="item-image" >
                 <img src={ props.item.url } alt={ props.item.description } />
