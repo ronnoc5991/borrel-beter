@@ -81,6 +81,11 @@ a, a:visited, a:active {
   left: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 .menu-button {
   position: fixed;
   top: 2vh;
