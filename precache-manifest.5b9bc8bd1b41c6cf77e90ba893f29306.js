@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "41a3d08f74e927f929e1e870ed5ed39e",
+    "revision": "039935d582bfad08757439b9253a6ee4",
     "url": "/borrel-beter/index.html"
   },
   {
-    "revision": "c16a981b4e8605b32b5b",
-    "url": "/borrel-beter/static/css/main.0811ef90.chunk.css"
+    "revision": "1e5b7f283cbc6190eb55",
+    "url": "/borrel-beter/static/css/main.fbbf0fb4.chunk.css"
   },
   {
     "revision": "93f30dd63126607d0989",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/borrel-beter/static/js/2.a654f6c6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c16a981b4e8605b32b5b",
+    "revision": "1e5b7f283cbc6190eb55",
     "url": "/borrel-beter/static/js/main.a59c1277.chunk.js"
   },
   {
