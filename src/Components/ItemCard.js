@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function ItemCard(props) {
 
-    // useEffect(() => {
-    //     Draggable.create(image, { // eslint-disable-line
-    //         bounds: document.getElementById("Store")
-    //     })
-    // }, []) 
+    const [isSelected, setIsSelected] = useState(false);
 
+    function selectItem () {
+        setIsSelected(!isSelected);
+        props.addItem(props.item)
+    }
 
     return (
-        <div className="ItemCard" title={ props.item.description } >
+        <div className={`ItemCard ${ isSelected ? 'selected' : '' }`} title={ props.item.description } onClick={ selectItem }>
 
             <div className="item-image" >
                 <img src={ props.item.url } alt={ props.item.description } />

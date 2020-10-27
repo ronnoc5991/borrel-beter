@@ -25,10 +25,10 @@ function Beers(props) {
     return (
         <div className="Beers" >
 
-            <div className={`drawer ${props.openState ? 'open' : 'closed'}`}>
+            <div className={`drawer beer ${props.openState ? 'open' : 'closed'}`}>
                 { beers && beers.map((beer) => {
 
-                    return <ItemCard key={ getUniqueKey() } item={beer} />
+                    return <ItemCard key={ getUniqueKey() } item={beer} addItem={ props.addItem } />
                 
                 }) }
             </div>

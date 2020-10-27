@@ -38,7 +38,7 @@ function App() {
     shouldSideCartRender();
   }, [])
 
-  window.addEventListener('resize', shouldSideCartRender)
+  window.addEventListener('resize', shouldSideCartRender) //remove this?
   
   return (
     <Router>

@@ -25,9 +25,9 @@ function Snacks(props) {
     return (
         <div className="Snacks">
 
-            <div className={`drawer ${ props.openState ? 'open' : 'closed' }`}>
+            <div className={`drawer snack ${ props.openState ? 'open' : 'closed' }`}>
                 {  snacks && snacks.map((snack) => {
-                    return <ItemCard key={ getUniqueKey() } item={snack} />
+                    return <ItemCard key={ getUniqueKey() } item={snack} addItem={ props.addItem }/>
                 })}              
             </div>
 

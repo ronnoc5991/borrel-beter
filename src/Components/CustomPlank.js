@@ -1,20 +1,49 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Beers from './Beers'
 import Cheeses from './Cheeses'
 import Meats from './Meats'
 import Snacks from './Snacks'
 
-function CustomPlank(props) {
+function CustomPlank() {
 
     const [drawers, setDrawers] = useState([true, false, false, false]);
+    const [items, setItems] = useState([]);
+
+    let container = useRef(null);
+    
 
 
-    function openDrawer (drawer, currentState) { //there is a more elegant solution...currently, each child compenent has to know its own place in the draweropen state
+    function openDrawer (drawer, currentState) { //each child compenent has to know its own place in the draweropen state
         let newDrawers = [false, false, false, false];
         newDrawers[drawer] = !currentState;
         setDrawers(newDrawers);
     }
+
+    function addItemToBundle (item) {
+        setItems([...items, item])
+    }
+
+    function createDraggables () {
+        Draggable.create('.draggable', { //eslint-disable-line
+            bounds: container
+        })
+    }
+
+    useEffect(() => {
+        createDraggables()
+    }, )
+
+    function getUniqueKey () {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    function deleteMe () {
+        console.log('Hello Moto')
+    }
+
+
+    //add draggable to the plank area of each item
 
     return (
         <div className="CustomPlank" >
@@ -31,31 +60,39 @@ function CustomPlank(props) {
                 </div>
             </Link>
 
+            <div className="plank-container" ref={ el => container = el }>
+                <img src="https://firebasestorage.googleapis.com/v0/b/borrelbeter.appspot.com/o/RectanglePlank.png?alt=media&token=f6f2cd77-1e30-4f31-93bd-e1a2f7adc361" alt=""/>
+
+                { items && items.map((item) => {
+                    return <div className={`draggable draggable-${item.id}`}  key={ getUniqueKey() }>
+                        <img src={ item.url } alt=""/>
+                        <div className="delete-button" onClick={ deleteMe } ><i className="fa fa-trash"></i></div>
+                    </div>
+                }) }
+            </div>
+
             <div className="drawer-container">
                 <div className="drawer-titles">
-                    <div className="drawer-title" onClick={ () => openDrawer(0, drawers[0]) }>
+                    <div className="drawer-title beer" onClick={ () => openDrawer(0, drawers[0]) }>
                         <h4>Beers</h4>
                     </div>
-                    <div className="drawer-title" onClick={ () => openDrawer(1, drawers[1]) }>
+                    <div className="drawer-title cheese" onClick={ () => openDrawer(1, drawers[1]) }>
                         <h4>Cheeses</h4>
                     </div>
-                    <div className="drawer-title" onClick={ () => openDrawer(2, drawers[2]) }>
+                    <div className="drawer-title meat" onClick={ () => openDrawer(2, drawers[2]) }>
                         <h4>Meats</h4>
                     </div>
-                    <div className="drawer-title" onClick={ () => openDrawer(3, drawers[3]) }>
+                    <div className="drawer-title snack" onClick={ () => openDrawer(3, drawers[3]) }>
                         <h4>Snacks</h4>
                     </div>
                 </div>
-                <Beers openState={ drawers[0] } />
-                <Cheeses openState={drawers[1]} />
-                <Meats openState={drawers[2]} />
-                <Snacks openState={drawers[3]} />
+                <Beers openState={ drawers[0] } addItem={ addItemToBundle } />
+                <Cheeses openState={drawers[1]} addItem={ addItemToBundle } />
+                <Meats openState={drawers[2]} addItem={ addItemToBundle } />
+                <Snacks openState={drawers[3]} addItem={ addItemToBundle } />
             </div>
         </div>
     )
 }
 
 export default CustomPlank
-
-//user should select 2 cheeses, 2 meats, 2 snacks and 1 beer
-// then they should be prompted to add to cart
