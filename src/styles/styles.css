@@ -743,6 +743,7 @@ a, a:visited, a:active {
 
 .draggable .delete-button i {
   display: none;
+  color: var(--red);
 }
 
 .draggable:hover .delete-button i {
@@ -776,10 +777,6 @@ a, a:visited, a:active {
 
 .ItemCard .item-image img {
   height: 100%;
-}
-
-.selected {
-  border: 2px solid red;
 }
 
 @media (max-width: 1025px) {

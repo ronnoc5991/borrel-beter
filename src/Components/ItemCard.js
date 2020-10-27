@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function ItemCard(props) {
 
-    const [isSelected, setIsSelected] = useState(false);
-
     function selectItem () {
-        setIsSelected(!isSelected);
         props.addItem(props.item)
     }
 
     return (
-        <div className={`ItemCard ${ isSelected ? 'selected' : '' }`} title={ props.item.description } onClick={ selectItem }>
+        <div className="ItemCard" title={ props.item.description } onClick={ selectItem }>
 
             <div className="item-image" >
                 <img src={ props.item.url } alt={ props.item.description } />
