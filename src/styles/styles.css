@@ -464,25 +464,6 @@ a, a:visited, a:active {
   font-size: 24px;
 }
 
-.Plank .add-plank {
-  margin: 0 auto;
-  width: 120px;
-  border: 0.5vmin solid var(--red);
-  padding: 2vmin 3vmin;
-  border-radius: 5vmin;
-  cursor: pointer;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  text-align: center;
-  font-size: 24px;
-  color: var(--red);
-}
-
-.Plank .add-plank:hover {
-  background-color: var(--red);
-  color: white;
-}
-
 .Plank .added-plank {
   margin: 0 auto;
   width: 120px;
@@ -517,6 +498,26 @@ a, a:visited, a:active {
   max-height: 60vh;
 }
 
+.add-plank {
+  margin: 0 auto;
+  width: 120px;
+  border: 0.5vmin solid var(--red);
+  padding: 2vmin 3vmin;
+  border-radius: 5vmin;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  text-align: center;
+  font-size: 24px;
+  color: var(--red);
+  z-index: 10;
+}
+
+.add-plank:hover {
+  background-color: var(--red);
+  color: white;
+}
+
 .CustomPlank {
   height: 100vh;
   width: 100vw;
@@ -524,12 +525,20 @@ a, a:visited, a:active {
   background-size: 400px;
 }
 
-.plank-container {
-  width: 80vw;
-  height: 60vh;
-  border: 1px solid black;
+.CustomPlank .add-plank {
+  font-size: 20px;
   position: absolute;
   top: 5vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.plank-container {
+  width: 80vw;
+  height: 50vh;
+  position: absolute;
+  top: 12vh;
   left: 10vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -612,14 +621,6 @@ a, a:visited, a:active {
   transition: all 300ms ease-in-out;
 }
 
-.open {
-  z-index: 10;
-}
-
-.closed {
-  z-index: 5;
-}
-
 .closed .ItemCard {
   display: none;
 }
@@ -687,8 +688,7 @@ a, a:visited, a:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 2vmin;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 

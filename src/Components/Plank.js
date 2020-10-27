@@ -3,16 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Plank(props) {
 
+
     function addItem (item) {
         props.addItem([item])
-    }
-
-    function inCart (item) {
-        if (props.cart.includes(item)) {
-            return true
-        } else {
-            return false
-        }
     }
 
     return (
@@ -25,22 +18,20 @@ function Plank(props) {
                     { props.plank.description }
                 </div>
 
-                { props.plank.name === "Make Your Own!" && 
+                { props.plank.name === "Make Your Own!" ? 
                     <Link to="/borrel-beter/customize">
                         <div className="add-plank"> Customize! </div>
                     </Link>
-                }
-
-                { inCart(props.plank) ? 
+                    :
+                    ( props.inCart ? 
                     <div className="added-plank" >
                         In Cart
                     </div>
                 :
                     <div className="add-plank" onClick={ () => { addItem(props.plank) } } >
                         Add to Cart
-                    </div> 
+                    </div>)
                 }
-                
 
             </div>
             <div className="plank-image">

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Nav from './Nav'
 import Home from './Home'
 import Store from './Store'
 import CustomPlank from './CustomPlank'
@@ -36,9 +35,12 @@ function App() {
 
   useEffect(() => {
     shouldSideCartRender();
+    window.addEventListener('resize', shouldSideCartRender) //remove this?
+    return () => {
+      window.removeEventListener('resize', shouldSideCartRender)
+    }
   }, [])
 
-  window.addEventListener('resize', shouldSideCartRender) //remove this?
   
   return (
     <Router>
@@ -51,18 +53,15 @@ function App() {
           </Route>
 
           <Route path="/borrel-beter/store" exact>
-            {/* <Nav /> */}
             <Store addItem={ addItemToCart } cart={ cart } />
             { (cart.length > 0 && sideCart) && <CartSidePanel cart={ cart } /> }
           </Route>
 
           <Route path="/borrel-beter/cart" exact>
-            {/* <Nav /> */}
             <Cart cart={ cart } removeFunction={ removeItemFromCart } />
           </Route>
 
           <Route path="/borrel-beter/customize" exact>
-            {/* <Nav /> */}
             <CustomPlank  addItem={ addItemToCart } />
           </Route>
 

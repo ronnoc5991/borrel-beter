@@ -5,14 +5,12 @@ import Cheeses from './Cheeses'
 import Meats from './Meats'
 import Snacks from './Snacks'
 
-function CustomPlank() {
+function CustomPlank(props) {
 
     const [drawers, setDrawers] = useState([true, false, false, false]);
-    const [items, setItems] = useState([]);
+    const [miniCart, setMiniCart] = useState([]);
 
     let container = useRef(null);
-    
-
 
     function openDrawer (drawer, currentState) { //each child compenent has to know its own place in the draweropen state
         let newDrawers = [false, false, false, false];
@@ -21,7 +19,7 @@ function CustomPlank() {
     }
 
     function addItemToBundle (item) {
-        setItems([...items, item])
+        setMiniCart([...miniCart, item])
     }
 
     function createDraggables () {
@@ -32,15 +30,18 @@ function CustomPlank() {
 
     useEffect(() => {
         createDraggables()
-    }, )
+    })
 
     function getUniqueKey () {
         return '_' + Math.random().toString(36).substr(2, 9);
     }
 
-    function deleteMe () {
-        console.log('Hello Moto')
-    }
+    function removeItemFromCart (itemName) {
+    let newMiniCart = miniCart.filter((item) => {
+      return item.name !== itemName
+    })
+    setMiniCart(newMiniCart);
+  }
 
 
     //add draggable to the plank area of each item
@@ -63,12 +64,16 @@ function CustomPlank() {
             <div className="plank-container" ref={ el => container = el }>
                 <img src="https://firebasestorage.googleapis.com/v0/b/borrelbeter.appspot.com/o/RectanglePlank.png?alt=media&token=f6f2cd77-1e30-4f31-93bd-e1a2f7adc361" alt=""/>
 
-                { items && items.map((item) => {
+                { miniCart && miniCart.map((item) => {
                     return <div className={`draggable draggable-${item.id}`}  key={ getUniqueKey() }>
                         <img src={ item.url } alt=""/>
-                        <div className="delete-button" onClick={ deleteMe } ><i className="fa fa-trash"></i></div>
+                        <div className="delete-button" onClick={ () => { removeItemFromCart(item.name) } } ><i className="fa fa-trash"></i></div>
                     </div>
                 }) }
+            </div>
+
+            <div className="add-plank" onClick={ () => { props.addItem(miniCart) } } >
+                Add to Cart
             </div>
 
             <div className="drawer-container">

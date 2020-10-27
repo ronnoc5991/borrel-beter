@@ -23,10 +23,16 @@ function Store(props) {
         gsap.to(smallNav, {opacity: 1, duration: 1, delay: .5}); //eslint-disable-line
     }, [])
 
+    useEffect(() => {
+        window.addEventListener('scroll', changeActivePlank)
+        return () => {
+            window.removeEventListener('scroll', changeActivePlank)
+        }
+    }, [])
+
     function changeActivePlank() {
         setActivePlank(Math.round(window.scrollX / window.innerWidth))
     }
-
     
     function getUniqueKey () {
         return '_' + Math.random().toString(36).substr(2, 9);
@@ -39,8 +45,15 @@ function Store(props) {
     function scroll (plankNumber) {
         gsap.to(window, {duration: 1, scrollTo: {y: 0, x: getPXValue(plankNumber * 100)} }) //eslint-disable-line
     }
+
+    function checkCart (item) {
+        if (props.cart.includes(item)) {
+            return true
+        } else {
+            return false
+        }
+    }
     
-    window.addEventListener('scroll', changeActivePlank)
 
     return (
         <div className="Store" >
@@ -52,7 +65,7 @@ function Store(props) {
             </Link>
 
            { plankjes && plankjes.map((plankje, index) => {
-               return <Plank index={ index } cart={ props.cart } key={ getUniqueKey() } plank={ plankje } addItem={ props.addItem } />
+               return <Plank index={ index } inCart={ checkCart(plankje) } key={ getUniqueKey() } plank={ plankje } addItem={ props.addItem } />
            }) }
 
            <div className="store-nav" ref={ el => smallNav = el }>
