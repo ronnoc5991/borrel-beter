@@ -657,7 +657,7 @@ a, a:visited, a:active {
 }
 
 .drawer-title {
-  width: 25vw;
+  width: 20vw;
   height: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -690,6 +690,10 @@ a, a:visited, a:active {
 
 .snack {
   background-color: var(--orange);
+}
+
+.bread {
+  background-color: green;
 }
 
 .drawer {

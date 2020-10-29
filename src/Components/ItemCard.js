@@ -10,12 +10,12 @@ function ItemCard(props) {
         <div className="ItemCard" title={ props.item.description } onClick={ selectItem }>
 
             <div className="item-image" >
-                <img src={ props.item.url } alt={ props.item.description } />
+                <img src={ props.item.imageUrl } alt={ props.item.description } />
             </div>
 
 
             <div className="item-name">
-                {props.item.name[0].toUpperCase() + props.item.name.slice(1) }
+                { props.item.name }
             </div>
 
         </div>

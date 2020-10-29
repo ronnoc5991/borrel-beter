@@ -3,10 +3,11 @@ import Beers from './Beers'
 import Cheeses from './Cheeses'
 import Meats from './Meats'
 import Snacks from './Snacks'
+import Breads from './Breads'
 
 function Drawers(props) {
 
-    const [drawers, setDrawers] = useState([true, false, false, false]);
+    const [drawers, setDrawers] = useState([true, false, false, false, false]);
 
     function openDrawer (drawer, currentState) { //each child compenent has to know its own place in the draweropen state
         let newDrawers = [false, false, false, false];
@@ -30,11 +31,15 @@ function Drawers(props) {
                     <div className="drawer-title snack" onClick={ () => openDrawer(3, drawers[3]) }>
                         <h4>Snacks</h4>
                     </div>
+                    <div className="drawer-title bread" onClick={ () => openDrawer(4, drawers[4]) }>
+                        <h4>Breads</h4>
+                    </div>
                 </div>
                 <Beers openState={ drawers[0] } addItem={ props.addItem } />
                 <Cheeses openState={drawers[1]} addItem={ props.addItem } />
                 <Meats openState={drawers[2]} addItem={ props.addItem } />
                 <Snacks openState={drawers[3]} addItem={ props.addItem } />
+                <Breads openState={drawers[4]} addItem={ props.addItem } />
             </div>
         </div>
     )

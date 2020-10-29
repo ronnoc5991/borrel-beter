@@ -65,7 +65,7 @@ function CustomPlank(props) {
 
                 { miniCart && miniCart.map((item) => {
                     return <div className="draggable" id={`${item.name}`}  key={ getUniqueKey() }>
-                        <img src={ item.url } alt=""/>
+                        <img src={ item.imageUrl } alt=""/>
                         <div className="delete-button" onClick={ () => { removeItemFromCart(item.name) } } ><i className="fa fa-lg fa-trash"></i></div>
                     </div>
                 }) }
