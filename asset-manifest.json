@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/borrel-beter/static/css/main.ac932eae.chunk.css",
-    "main.js": "/borrel-beter/static/js/main.1be691f0.chunk.js",
-    "main.js.map": "/borrel-beter/static/js/main.1be691f0.chunk.js.map",
+    "main.css": "/borrel-beter/static/css/main.387a9e62.chunk.css",
+    "main.js": "/borrel-beter/static/js/main.8987dd51.chunk.js",
+    "main.js.map": "/borrel-beter/static/js/main.8987dd51.chunk.js.map",
     "runtime-main.js": "/borrel-beter/static/js/runtime-main.d5f0c9f5.js",
     "runtime-main.js.map": "/borrel-beter/static/js/runtime-main.d5f0c9f5.js.map",
-    "static/js/2.f7aaaefb.chunk.js": "/borrel-beter/static/js/2.f7aaaefb.chunk.js",
-    "static/js/2.f7aaaefb.chunk.js.map": "/borrel-beter/static/js/2.f7aaaefb.chunk.js.map",
+    "static/js/2.2bc1ddc1.chunk.js": "/borrel-beter/static/js/2.2bc1ddc1.chunk.js",
+    "static/js/2.2bc1ddc1.chunk.js.map": "/borrel-beter/static/js/2.2bc1ddc1.chunk.js.map",
     "index.html": "/borrel-beter/index.html",
-    "precache-manifest.780e99b2654ebda8994e9709f99bae2f.js": "/borrel-beter/precache-manifest.780e99b2654ebda8994e9709f99bae2f.js",
+    "precache-manifest.af988b3f7994b350f8a49bf3e2557032.js": "/borrel-beter/precache-manifest.af988b3f7994b350f8a49bf3e2557032.js",
     "service-worker.js": "/borrel-beter/service-worker.js",
-    "static/css/main.ac932eae.chunk.css.map": "/borrel-beter/static/css/main.ac932eae.chunk.css.map",
-    "static/js/2.f7aaaefb.chunk.js.LICENSE.txt": "/borrel-beter/static/js/2.f7aaaefb.chunk.js.LICENSE.txt",
-    "static/media/styles.css": "/borrel-beter/static/media/marble.71739bcf.jpg",
+    "static/css/main.387a9e62.chunk.css.map": "/borrel-beter/static/css/main.387a9e62.chunk.css.map",
+    "static/js/2.2bc1ddc1.chunk.js.LICENSE.txt": "/borrel-beter/static/js/2.2bc1ddc1.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/borrel-beter/static/media/marble2.ae97d43d.jpg",
+    "static/media/towel.png": "/borrel-beter/static/media/towel.3724a6e8.png",
     "static/media/video.mp4": "/borrel-beter/static/media/video.06ce422b.mp4"
   },
   "entrypoints": [
     "static/js/runtime-main.d5f0c9f5.js",
-    "static/js/2.f7aaaefb.chunk.js",
-    "static/css/main.ac932eae.chunk.css",
-    "static/js/main.1be691f0.chunk.js"
+    "static/js/2.2bc1ddc1.chunk.js",
+    "static/css/main.387a9e62.chunk.css",
+    "static/js/main.8987dd51.chunk.js"
   ]
 }
