@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Plank from './Plank'
 import { db } from '../firebase' 
-import Knife from '../knife.png'
 import Towel from '../towel.png'
 
 function Store(props) {
@@ -48,13 +47,23 @@ function Store(props) {
         gsap.to(window, {duration: 1, scrollTo: {y: 0, x: getPXValue(plankNumber * 100 + 100)} }) //eslint-disable-line
     }
 
+    // function checkCart (item) {
+    //     if (props.cart.includes(item)) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
+
     function checkCart (item) {
-        if (props.cart.includes(item)) {
-            return true
-        } else {
-            return false
+        let exists = false;  //loop through cart and find if an array with this item object already exists
+        for (let i = 0; i < props.cart.length; i++) {
+          if (props.cart[i][0].name === item.name) {
+            exists = true;
+          }
         }
-    }
+        return exists;
+      }
     
 
     return (
@@ -67,14 +76,18 @@ function Store(props) {
             </Link>
 
             <div className="store-title">
-                <div className="knife">
-                    <img src={ Knife } alt=""/>
-                </div>
                 
-                <div className="towel">
+                {/* <div className="towel">
                     <img src={ Towel } alt=""/>
+                </div> */}
+                
+                <div className="title">
+                    Borrel Beter
                 </div>
-                Borrel Beter
+
+                <div className="see-plankjes-button" onClick={ () => scroll(0) }>
+                    Get a Plankje
+                </div>
             </div>
 
            { plankjes && plankjes.map((plankje, index) => {

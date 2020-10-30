@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Checkout(props) {
 
@@ -11,6 +12,18 @@ function Checkout(props) {
 
     return (
         <div className="Checkout">
+
+            <Link to="/borrel-beter/store">
+                <div className="menu-button">
+                    Store
+                </div>
+            </Link>
+
+            <Link to="/borrel-beter/cart">
+                <div className="menu-button second">
+                    Cart
+                </div>
+            </Link>
 
             <div className="cart-total">
                 <h3> Total: </h3>
