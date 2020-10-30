@@ -3,13 +3,8 @@ import { Link } from 'react-router-dom'
 
 function Plank(props) {
 
-
-    function addItem (item) {
-        props.addItem(item)
-    }
-
     return (
-        <div className="Plank" id={ `plank-${props.index}` }>
+        <div className="Plank" id={ `plank-${props.index}`} >
             <div className="plank-info">
                 <div className="plank-name">
                     { props.plank.name }
@@ -28,7 +23,7 @@ function Plank(props) {
                         In Cart
                     </div>
                 :
-                    <div className="add-plank" onClick={ () => { addItem(props.plank) } } >
+                    <div className="add-plank" onClick={ () => { props.addItem(props.plank) } } >
                         Add to Cart
                     </div>)
                 }

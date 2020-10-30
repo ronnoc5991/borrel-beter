@@ -81,12 +81,6 @@ a, a:visited, a:active {
   left: 0;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  background: transparent;
-}
-
 .menu-button {
   position: fixed;
   top: 2vh;
@@ -108,7 +102,7 @@ a, a:visited, a:active {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  z-index: 100;
+  z-index: 50;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
 }
@@ -440,6 +434,22 @@ a, a:visited, a:active {
   margin: 0 1vmin;
 }
 
+.Cart .checkout-button {
+  background: var(--green);
+  font-weight: bold;
+  color: white;
+  border-radius: 1vmin;
+  padding: 2vmin 1vmin;
+  -webkit-box-shadow: 0 0 0.8vmin 0.2vmin #444444;
+          box-shadow: 0 0 0.8vmin 0.2vmin #444444;
+  cursor: pointer;
+}
+
+.Cart .checkout-button:hover {
+  -webkit-box-shadow: 0 0 1vmin 0.2vmin #414141;
+          box-shadow: 0 0 1vmin 0.2vmin #414141;
+}
+
 .Cart .CartItem {
   width: 80%;
   height: 10vh;
@@ -506,10 +516,88 @@ a, a:visited, a:active {
   cursor: pointer;
 }
 
+.Checkout {
+  min-height: 100vh;
+  padding-top: 5vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../marble.jpg);
+  background-size: 400px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Checkout .cart-total {
+  width: 300px;
+  margin: 5vmin 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.Checkout .final-checkout-button {
+  width: 300px;
+  padding: 2vmin;
+  border-radius: 5px;
+  margin: 5vmin 0;
+  text-align: center;
+  background-color: var(--orange);
+  color: white;
+  -webkit-box-shadow: 0 0 1vmin .2vmin black;
+          box-shadow: 0 0 1vmin .2vmin black;
+  cursor: pointer;
+}
+
+.Checkout .checkout-form {
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 0.8vmin 0.2vmin #6e6e6e;
+          box-shadow: 0 0 0.8vmin 0.2vmin #6e6e6e;
+  height: 400px;
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Checkout form {
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Checkout form h1 {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 2vmin 0;
+}
+
+.Checkout form label input {
+  display: block;
+  width: 200px;
+  border: 1px solid #acacac;
+  height: 30px;
+}
+
 .Store {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 600vw;
+  width: 700vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,6 +608,53 @@ a, a:visited, a:active {
   background-size: 500px;
   color: black;
   scroll-behavior: smooth;
+  overflow-y: hidden;
+  border: 10px solid black;
+}
+
+.store-title {
+  height: 100%;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 12vmin;
+}
+
+.towel {
+  position: absolute;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  height: 60vmin;
+  top: -15vmin;
+  left: -10vmin;
+  z-index: 51;
+}
+
+.towel img {
+  height: 100%;
+}
+
+.knife {
+  position: absolute;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  height: 30vmin;
+  bottom: -5vmin;
+  right: -20vmin;
+}
+
+.knife img {
+  height: 100%;
 }
 
 .store-nav {
@@ -634,20 +769,20 @@ a, a:visited, a:active {
 .add-plank {
   margin: 0 auto;
   width: 120px;
-  border: 0.5vmin solid var(--red);
-  padding: 2vmin 3vmin;
-  border-radius: 5vmin;
+  border: 0.5vmin solid var(--orange);
+  padding: 2vmin;
+  border-radius: 5px;
   cursor: pointer;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   text-align: center;
   font-size: 24px;
-  color: var(--red);
+  color: var(--orange);
   z-index: 10;
 }
 
 .add-plank:hover {
-  background-color: var(--red);
+  background-color: var(--orange);
   color: white;
 }
 
@@ -699,10 +834,11 @@ a, a:visited, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 2vmin;
+  border-radius: 5px;
   margin: 5vh auto auto auto;
   cursor: pointer;
-  background-color: var(--yellow);
+  background-color: var(--orange);
+  color: white;
   -webkit-box-shadow: 0 0 .2vmin .1vmin black;
           box-shadow: 0 0 .2vmin .1vmin black;
 }
@@ -776,28 +912,29 @@ a, a:visited, a:active {
 }
 
 .drawer-title:hover {
-  -webkit-box-shadow: 0 -0.4vmin 0.3vmin 0.1vmin #555555;
-          box-shadow: 0 -0.4vmin 0.3vmin 0.1vmin #555555;
+  height: 5.5vh;
+  -webkit-transform: translateY(-0.5vh);
+          transform: translateY(-0.5vh);
 }
 
 .beer {
-  background-color: #00243D;
+  background-color: #F2542D;
 }
 
 .cheese {
-  background-color: #003C66;
+  background-color: #F56E24;
 }
 
 .meat {
-  background-color: #00538F;
+  background-color: #F9871B;
 }
 
 .snack {
-  background-color: #006BB8;
+  background-color: #FCA111;
 }
 
 .bread {
-  background-color: #0083E0;
+  background-color: #FFBA08;
 }
 
 .drawer {
@@ -951,6 +1088,55 @@ a, a:visited, a:active {
   .Plank .plank-image img {
     width: 80%;
     margin: 5vh auto auto auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .Checkout .cart-total {
+    width: 90%;
+    margin: 5vh 0;
+  }
+  .Checkout .final-checkout-button {
+    width: 80%;
+    padding: 2vmin;
+    border-radius: 5px;
+    margin: 5vmin 0;
+    text-align: center;
+    background-color: var(--orange);
+    color: white;
+    -webkit-box-shadow: 0 0 1vmin .2vmin black;
+            box-shadow: 0 0 1vmin .2vmin black;
+    cursor: pointer;
+  }
+  .Checkout .checkout-form {
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 0.8vmin 0.2vmin #6e6e6e;
+            box-shadow: 0 0 0.8vmin 0.2vmin #6e6e6e;
+    height: auto;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .Checkout form {
+    margin: 5vh auto;
+    height: auto;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .Checkout form h1 {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 2vmin 0;
+  }
+  .Checkout form label input {
+    width: 100%;
+    height: 30px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

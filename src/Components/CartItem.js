@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function CartItem(props) {
+
+    //function that can increment or decrement the quantity of a given item
+    //here, we know the index of the item in the cart and the quantity
 
     return (
         <div className="CartItem" >
@@ -17,7 +20,9 @@ function CartItem(props) {
             </div>
 
             <div className="item-quantity">
-                <input type="number" defaultValue={ props.itemArray[1] } /> 
+                <input type="number" min="1" value={ props.itemArray[1] } onChange={ (e) => {
+                    props.changeQuantity(props.index, parseInt(e.target.value))
+                } } /> 
             </div>
 
 

@@ -42,14 +42,23 @@ function Cart(props) {
                 </div>
             </div>
 
-            { props.cart.map((itemArray) => {
-                return <CartItem  key={ getUniqueKey() } itemArray={ itemArray } removeItem={ props.removeFunction } />
+            { props.cart.map((itemArray, index) => {
+                return <CartItem  key={ getUniqueKey() } itemArray={ itemArray } index={ index } removeItem={ props.removeFunction } changeQuantity={ props.changeQuantity } />
             }) }
+
+            {/* think about splitting up the props to item and itemQuantity */}
 
             <div className="cart-total">
                 <h3> Total: </h3>
                 <h3> { `€ ${calculateTotal()}` } </h3>
             </div>
+
+            <Link to="/borrel-beter/checkout">
+                <div className="checkout-button">
+                    Proceed to Checkout
+                </div>
+            </Link>
+
         </div>
     )
 }

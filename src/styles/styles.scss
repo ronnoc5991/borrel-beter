@@ -80,11 +80,11 @@ a, a:visited, a:active {
 	left: 0;
 }
 
-::-webkit-scrollbar {
-	width: 0px;
-	height: 0px;
-    background: transparent;
-}
+// ::-webkit-scrollbar {
+// 	width: 0px;
+// 	height: 0px;
+//     background: transparent;
+// }
 
 .menu-button {
 	position: fixed;
@@ -100,7 +100,7 @@ a, a:visited, a:active {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	z-index: 100;
+	z-index: 50;
 	transform-origin: bottom;
 }
 
@@ -325,6 +325,21 @@ a, a:visited, a:active {
 		}
 	}
 
+	.checkout-button {
+		background: var(--green);
+		font-weight: bold;
+		color: white;
+		border-radius: 1vmin;
+		padding: 2vmin 1vmin;
+		box-shadow: 0 0 .8vmin .2vmin rgb(68, 68, 68);
+		cursor: pointer;
+	}
+	
+	.checkout-button:hover {
+		box-shadow: 0 0 1vmin .2vmin rgb(65, 65, 65);
+		
+	}
+
 	.CartItem {
 		width: 80%;
 		height: 10vh;
@@ -383,12 +398,77 @@ a, a:visited, a:active {
 
 }
 
+// --------------------------------------- Checkout ------------------------------------------------
+
+.Checkout {
+	min-height: 100vh;
+	padding-top: 5vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: url(../marble.jpg);
+	background-size: 400px;
+	box-sizing: border-box;
+
+	.cart-total {
+		width: 300px;
+		margin: 5vmin 0;
+		display: flex;
+		justify-content: space-around;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	.final-checkout-button {
+		width: 300px;
+		padding: 2vmin;
+		border-radius: 5px;
+		margin: 5vmin 0;
+		text-align: center;
+		background-color: var(--orange);
+		color: white;
+		box-shadow: 0 0 1vmin .2vmin black;
+		cursor: pointer;
+	}
+
+	.checkout-form {
+		background-color: white;
+		border-radius: 5px;
+		box-shadow: 0 0 .8vmin .2vmin rgb(110, 110, 110);
+		height: 400px;
+		width: 600px;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	form {
+		height: 100%;
+		justify-content: space-around;
+
+		h1 {
+			font-weight: bold;
+			font-size: 20px;
+			padding: 2vmin 0;
+		}
+
+		label {
+
+			input {
+				display: block;
+				width: 200px;
+				border: 1px solid rgb(172, 172, 172);
+				height: 30px;
+			}
+		}
+	}
+}
 
 // --------------------------------------- Store view ------------------------------------------------
 
 .Store {
 	box-sizing: border-box;
-	width: 600vw;
+	width: 700vw;
 	height: 100vh;
 	display: flex;
 	font-family: 'Nunito', sans-serif;
@@ -397,6 +477,46 @@ a, a:visited, a:active {
 	background-size: 500px;
 	color: black;
 	scroll-behavior: smooth;
+	overflow-y: hidden;
+	border: 10px solid black;
+}
+
+.store-title {
+	height: 100%;
+	width: 100vw;
+	display: flex;
+	box-sizing: border-box;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 12vmin;
+}
+
+.towel {
+	position: absolute;
+	transform: rotate(-20deg);
+	height: 60vmin;
+	top: -15vmin;
+	left: -10vmin;
+	z-index: 51;
+
+
+	img {
+		height: 100%;
+	}
+}
+
+.knife {
+	// border: 1px solid black;
+	position: absolute;
+	transform: rotate(-30deg);
+	height: 30vmin;
+	bottom: -5vmin;
+	right: -20vmin;
+
+	img {
+		height: 100%;
+	}
 }
 
 .store-nav {
@@ -490,19 +610,19 @@ a, a:visited, a:active {
 .add-plank {
 	margin: 0 auto;
 	width: 120px;
-	border: .5vmin solid var(--red);
-	padding: 2vmin 3vmin;
-	border-radius: 5vmin;
+	border: .5vmin solid var(--orange);
+	padding: 2vmin;
+	border-radius: 5px;
 	cursor: pointer;
 	transition: all 300ms ease-in-out;
 	text-align: center;
 	font-size: 24px;
-	color: var(--red);
+	color: var(--orange);
 	z-index: 10;
 }
 
 .add-plank:hover {
-	background-color: var(--red);
+	background-color: var(--orange);
 	color: white;
 }
 
@@ -545,10 +665,11 @@ a, a:visited, a:active {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			border-radius: 2vmin;
+			border-radius: 5px;
 			margin: 5vh auto auto auto;
 			cursor: pointer;
-			background-color: var(--yellow);
+			background-color: var(--orange);
+			color: white;
 			box-shadow: 0 0 .2vmin .1vmin black;
 		}
 
@@ -608,27 +729,28 @@ a, a:visited, a:active {
 }
 
 .drawer-title:hover {
-	box-shadow: 0 -.4vmin .3vmin .1vmin rgb(85, 85, 85);
+	height: 5.5vh;
+	transform: translateY(-.5vh);
 }
 
 .beer {
-	background-color: #00243D;
+	background-color: #F2542D;
 }
 
 .cheese {
-	background-color: #003C66;
+	background-color: #F56E24;
 }
 
 .meat {
-	background-color: #00538F;
+	background-color: #F9871B;
 }
 
 .snack {
-	background-color: #006BB8;
+	background-color: #FCA111;
 }
 
 .bread {
-	background-color: #0083E0;
+	background-color: #FFBA08;
 }
 
 .drawer {
@@ -703,15 +825,6 @@ a, a:visited, a:active {
 
 @media (max-width: 1025px) {
 
-	.Nav {
-		ul {
-
-			li {
-				// font-size: 16px;
-			}
-		}
-	}
-
 	.Plank {
 		height: 92vh;
 		width: 100vw;
@@ -760,5 +873,58 @@ a, a:visited, a:active {
 			}
 		}
 	
+	}
+}
+
+@media (max-width: 650px) {
+	.Checkout {
+	
+		.cart-total {
+			width: 90%;
+			margin: 5vh 0;
+		}
+	
+		.final-checkout-button {
+			width: 80%;
+			padding: 2vmin;
+			border-radius: 5px;
+			margin: 5vmin 0;
+			text-align: center;
+			background-color: var(--orange);
+			color: white;
+			box-shadow: 0 0 1vmin .2vmin black;
+			cursor: pointer;
+		}
+	
+		.checkout-form {
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 0 0 .8vmin .2vmin rgb(110, 110, 110);
+			height: auto;
+			width: 90%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+	
+		form {
+			margin: 5vh auto;
+			height: auto;
+			justify-content: space-around;
+	
+			h1 {
+				font-weight: bold;
+				font-size: 20px;
+				padding: 2vmin 0;
+			}
+	
+			label {
+	
+				input {
+					width: 100%;
+					height: 30px;
+				}
+			}
+		}
 	}
 }

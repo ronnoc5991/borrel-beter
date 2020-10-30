@@ -6,6 +6,7 @@ import Store from './Store'
 import CustomPlank from './CustomPlank'
 import Cart from './Cart'
 import CartSidePanel from './CartSidePanel'
+import Checkout from './Checkout'
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
           let index = cart.findIndex((itemArray) => {
             return itemArray[0].name === itemInArray.name
           })
-          newCart[index][1] += 1; //increment the quantity of that item
+          newCart[index][1] = parseInt(newCart[index][1]) + 1; //increment the quantity of that item
         } else {
           newCart.push([itemInArray, 1])
         }
@@ -51,6 +52,12 @@ function App() {
       }
     }
     return exists;
+  }
+
+  function changeQuantity (index, quantity) {
+    let newCart = [...cart];
+    newCart[index][1] = quantity;
+    setCart(newCart);
   }
 
   function removeItemFromCart (itemName) {
@@ -93,11 +100,15 @@ function App() {
           </Route>
 
           <Route path="/borrel-beter/cart" exact>
-            <Cart cart={ cart } removeFunction={ removeItemFromCart } />
+            <Cart cart={ cart } removeFunction={ removeItemFromCart } changeQuantity={ changeQuantity } />
           </Route>
 
           <Route path="/borrel-beter/customize" exact>
             <CustomPlank  addItem={ addItemToCart } />
+          </Route>
+
+          <Route path="/borrel-beter/checkout">
+            <Checkout cart={ cart } />
           </Route>
 
         </Switch>

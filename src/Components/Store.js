@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Plank from './Plank'
 import { db } from '../firebase' 
+import Knife from '../knife.png'
+import Towel from '../towel.png'
 
 function Store(props) {
 
@@ -31,7 +33,7 @@ function Store(props) {
     }, [])
 
     function changeActivePlank() {
-        setActivePlank(Math.round(window.scrollX / window.innerWidth))
+        setActivePlank(Math.round((window.scrollX - window.innerWidth)/ window.innerWidth))
     }
     
     function getUniqueKey () {
@@ -43,7 +45,7 @@ function Store(props) {
     }
     
     function scroll (plankNumber) {
-        gsap.to(window, {duration: 1, scrollTo: {y: 0, x: getPXValue(plankNumber * 100)} }) //eslint-disable-line
+        gsap.to(window, {duration: 1, scrollTo: {y: 0, x: getPXValue(plankNumber * 100 + 100)} }) //eslint-disable-line
     }
 
     function checkCart (item) {
@@ -63,6 +65,17 @@ function Store(props) {
                     Cart
                 </div>
             </Link>
+
+            <div className="store-title">
+                <div className="knife">
+                    <img src={ Knife } alt=""/>
+                </div>
+                
+                <div className="towel">
+                    <img src={ Towel } alt=""/>
+                </div>
+                Borrel Beter
+            </div>
 
            { plankjes && plankjes.map((plankje, index) => {
                return <Plank index={ index } inCart={ checkCart(plankje) } key={ getUniqueKey() } plank={ plankje } addItem={ props.addItem } />
