@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function CartItem(props) {
+
     return (
         <div className="CartItem" >
             <div className="item-name">
-                { props.item.name }
+                { props.itemArray[0].name }
             </div>
 
             <div className="item-image">
-                <img src={ props.item.imageUrl } alt=""/>
+                <img src={ props.itemArray[0].imageUrl } alt=""/>
             </div>
 
             <div className="item-price">
-                { `€ ${props.item.price}` }
+                { `€ ${props.itemArray[0].price}` }
+            </div>
+
+            <div className="item-quantity">
+                <input type="number" defaultValue={ props.itemArray[1] } /> 
             </div>
 
 
-            <div className="remove-button" onClick={ () => props.removeItem(props.item.name) } >
+            <div className="remove-button" onClick={ () => props.removeItem(props.itemArray[0].name) } >
                 <i className="fa fa-lg fa-trash"></i>
             </div>
         </div>

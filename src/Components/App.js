@@ -14,13 +14,48 @@ function App() {
   const [sideCart, setSideCart] = useState(false);
 
   function addItemToCart (item) {
-    let newCart = [...cart, ...item];
-    setCart(newCart);
+    let newCart = [...cart];
+    if (item.length) { //if the item is an array of items
+      let itemsArray = [...item];
+      itemsArray.forEach((itemInArray) => {
+        //find if it is already in cart
+        if (checkCart(itemInArray)) {
+          let index = cart.findIndex((itemArray) => {
+            return itemArray[0].name === itemInArray.name
+          })
+          newCart[index][1] += 1; //increment the quantity of that item
+        } else {
+          newCart.push([itemInArray, 1])
+        }
+      })
+      setCart(newCart)
+    } else {
+      if (checkCart(item)) { //if item is in cart
+        let index = cart.findIndex((itemArray) => {
+          return itemArray[0].name === item.name
+        })
+        newCart[index][1] += 1; //increment the quantity of that item
+        setCart(newCart)
+      } else {
+        newCart.push([item, 1])
+        setCart(newCart);
+      }
+    }
+  }
+
+  function checkCart (item) {
+    let exists = false;  //loop through cart and find if an array with this item object already exists
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i][0].name === item.name) {
+        exists = true;
+      }
+    }
+    return exists;
   }
 
   function removeItemFromCart (itemName) {
-    let newCart = cart.filter((item) => {
-      return item.name !== itemName
+    let newCart = cart.filter((itemArray) => {
+      return itemArray[0].name !== itemName
     })
     setCart(newCart);
   }

@@ -5,7 +5,7 @@ function Plank(props) {
 
 
     function addItem (item) {
-        props.addItem([item])
+        props.addItem(item)
     }
 
     return (

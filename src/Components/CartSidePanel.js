@@ -9,8 +9,8 @@ function CartSidePanel(props) {
     }, [])
 
     function calculateTotal () {
-        let total = props.cart.reduce((acc, curr) => {
-            return acc + curr.price
+        let total = props.cart.reduce((acc, itemArray) => {
+            return acc + (itemArray[0].price * itemArray[1])
         }, 0)
         return Math.round(total * 100 ) / 100
     }
@@ -30,8 +30,8 @@ function CartSidePanel(props) {
                 </div>
             </div>
 
-            { props.cart.map((item) => {
-                return <img src={ item.imageUrl } key ={ getUniqueKey() } title={ item.name } alt=""/>
+            { props.cart.map((itemArray) => {
+                return <img src={ itemArray[0].imageUrl } key ={ getUniqueKey() } title={ itemArray[0].name } alt=""/>
             }) }
         </div>
     )

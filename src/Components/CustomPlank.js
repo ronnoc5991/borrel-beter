@@ -5,6 +5,7 @@ import Drawers from './Drawers'
 function CustomPlank(props) {
 
     const [miniCart, setMiniCart] = useState([]);
+    const [inSetUp, setInSetUp] = useState(true);
 
     let container = useRef(null);
 
@@ -41,6 +42,10 @@ function CustomPlank(props) {
         setMiniCart(newMiniCart);
     }
 
+    function endSetUp () {
+        setInSetUp(false);
+    }
+
     return (
         <div className="CustomPlank" >
 
@@ -56,12 +61,27 @@ function CustomPlank(props) {
                 </div>
             </Link>
             
-            <div className="add-plank" onClick={ () => { props.addItem(miniCart) } } >
+            <div className="add-plank" onClick={ () => props.addItem(miniCart) } >
                 Add to Cart
             </div>
 
+            { inSetUp && 
+                <div className="walkthrough-container">
+                    <h1>Step One:</h1>
+                    <h2>Select the items you want below</h2>
+                    <br/>
+                    <h1>Step Two:</h1>
+                    <h2>Arrange them on the plank</h2>
+                    <br/>
+                    <h1>Step Three:</h1>
+                    <h2>Add the plank to your cart</h2>
+
+                    <div className="ok-button" onClick={ endSetUp } >OK!</div>
+                </div>
+            }
+
             <div className="plank-container" ref={ el => container = el }>
-                <img src="https://firebasestorage.googleapis.com/v0/b/borrelbeter.appspot.com/o/RectanglePlank.png?alt=media&token=f6f2cd77-1e30-4f31-93bd-e1a2f7adc361" alt=""/>
+                <img id="plank-image" src="https://firebasestorage.googleapis.com/v0/b/borrelbeter.appspot.com/o/RectanglePlank.png?alt=media&token=f6f2cd77-1e30-4f31-93bd-e1a2f7adc361" alt=""/>
 
                 { miniCart && miniCart.map((item) => {
                     return <div className="draggable" id={`${item.name}`}  key={ getUniqueKey() }>

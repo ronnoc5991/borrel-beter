@@ -379,6 +379,48 @@ a, a:visited, a:active {
   margin: 0 auto 5vh auto;
   font-size: 20px;
   font-weight: bold;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.Cart .cart-headers {
+  width: 80%;
+  height: 5vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 47% 24% 15% 1fr;
+      grid-template-columns: 47% 24% 15% 1fr;
+  margin: 1vh auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 3vmin;
+  font-style: italic;
+}
+
+.Cart .cart-headers .item-name {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  border-bottom: 1px solid black;
+  margin: auto 2vmin;
+}
+
+.Cart .cart-headers .item-price {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  border-bottom: 1px solid black;
+  margin: auto 2vmin;
+}
+
+.Cart .cart-headers .item-quantity {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  border-bottom: 1px solid black;
+  margin: auto 2vmin;
 }
 
 .Cart .cart-total {
@@ -424,6 +466,18 @@ a, a:visited, a:active {
   text-align: center;
 }
 
+.Cart .CartItem .item-quantity {
+  width: 15%;
+}
+
+.Cart .CartItem .item-quantity input {
+  all: unset;
+  width: 100%;
+  border-radius: .5vmin;
+  background-color: white;
+  text-align: center;
+}
+
 .Cart .CartItem .item-image {
   width: 25%;
   height: 100%;
@@ -438,7 +492,7 @@ a, a:visited, a:active {
 }
 
 .Cart .CartItem .remove-button {
-  width: 25%;
+  width: 15%;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -613,9 +667,54 @@ a, a:visited, a:active {
           transform: translate(-50%, -50%);
 }
 
+.CustomPlank .walkthrough-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 50;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 0 1vmin 0.2vmin #494949;
+          box-shadow: 0 0 1vmin 0.2vmin #494949;
+  padding: 3vmin 5vmin;
+  border-radius: 2vmin;
+  line-height: 1.5em;
+}
+
+.CustomPlank .walkthrough-container h1 {
+  font-weight: bold;
+}
+
+.CustomPlank .walkthrough-container .ok-button {
+  width: 25%;
+  height: 5vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2vmin;
+  margin: 5vh auto auto auto;
+  cursor: pointer;
+  background-color: var(--yellow);
+  -webkit-box-shadow: 0 0 .2vmin .1vmin black;
+          box-shadow: 0 0 .2vmin .1vmin black;
+}
+
+.CustomPlank .walkthrough-container .ok-button:hover {
+  -webkit-box-shadow: 0 0 .5vmin .1vmin black;
+          box-shadow: 0 0 .5vmin .1vmin black;
+}
+
 .plank-container {
   width: 80vw;
-  height: 50vh;
+  height: 60vh;
   position: absolute;
   top: 12vh;
   left: 10vw;
@@ -630,7 +729,7 @@ a, a:visited, a:active {
           align-items: center;
 }
 
-.plank-container img {
+.plank-container #plank-image {
   max-width: 100%;
   max-height: 100%;
 }
@@ -643,7 +742,7 @@ a, a:visited, a:active {
   width: 100vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: var(--yellow);
+  background-color: #00243D;
   color: white;
 }
 
@@ -676,24 +775,29 @@ a, a:visited, a:active {
   border-top-right-radius: 8vmin;
 }
 
+.drawer-title:hover {
+  -webkit-box-shadow: 0 -0.4vmin 0.3vmin 0.1vmin #555555;
+          box-shadow: 0 -0.4vmin 0.3vmin 0.1vmin #555555;
+}
+
 .beer {
-  background-color: var(--yellow);
+  background-color: #00243D;
 }
 
 .cheese {
-  background-color: var(--blue);
+  background-color: #003C66;
 }
 
 .meat {
-  background-color: var(--red);
+  background-color: #00538F;
 }
 
 .snack {
-  background-color: var(--orange);
+  background-color: #006BB8;
 }
 
 .bread {
-  background-color: green;
+  background-color: #0083E0;
 }
 
 .drawer {
@@ -702,6 +806,9 @@ a, a:visited, a:active {
   display: flex;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .closed .ItemCard {
@@ -710,8 +817,7 @@ a, a:visited, a:active {
 
 .draggable {
   position: absolute;
-  height: 25vmin;
-  width: 25vmin;
+  height: 15vmin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
