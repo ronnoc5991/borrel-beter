@@ -49,7 +49,7 @@ function CustomPlank(props) {
     return (
         <div className="CustomPlank" >
 
-            <Link to="/borrel-beter/store">
+            <Link to="/borrel-beter/">
                 <div className="menu-button">
                     Store
                 </div>

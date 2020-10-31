@@ -13,7 +13,7 @@ function Checkout(props) {
     return (
         <div className="Checkout">
 
-            <Link to="/borrel-beter/store">
+            <Link to="/borrel-beter/">
                 <div className="menu-button">
                     Store
                 </div>

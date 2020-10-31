@@ -18,7 +18,7 @@ function Cart(props) {
     return (
         <div className="Cart">
 
-            <Link to="/borrel-beter/store">
+            <Link to="/borrel-beter/">
                 <div className="menu-button">
                     Store
                 </div>

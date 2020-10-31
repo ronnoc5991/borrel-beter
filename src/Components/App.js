@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './Home'
 import Store from './Store'
 import CustomPlank from './CustomPlank'
 import Cart from './Cart'
@@ -91,10 +90,6 @@ function App() {
         <Switch>
 
           <Route path="/borrel-beter/" exact>
-            <Home />
-          </Route>
-
-          <Route path="/borrel-beter/store" exact>
             <Store addItem={ addItemToCart } cart={ cart } />
             { (cart.length > 0 && sideCart) && <CartSidePanel cart={ cart } /> }
           </Route>
