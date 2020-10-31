@@ -46,8 +46,6 @@ function Cart(props) {
                 return <CartItem  key={ getUniqueKey() } itemArray={ itemArray } index={ index } removeItem={ props.removeFunction } changeQuantity={ props.changeQuantity } />
             }) }
 
-            {/* think about splitting up the props to item and itemQuantity */}
-
             <div className="cart-total">
                 <h3> Total: </h3>
                 <h3> { `€ ${calculateTotal()}` } </h3>
@@ -55,7 +53,7 @@ function Cart(props) {
 
             <Link to="/borrel-beter/checkout">
                 <div className="checkout-button">
-                    Proceed to Checkout
+                    Checkout
                 </div>
             </Link>
 

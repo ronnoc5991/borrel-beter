@@ -31,7 +31,7 @@ function CartSidePanel(props) {
             </div>
 
             { props.cart.map((itemArray) => {
-                return <img src={ itemArray[0].imageUrl } key ={ getUniqueKey() } title={ itemArray[0].name } alt=""/>
+                return <> <hr></hr> <img src={ itemArray[0].imageUrl } key ={ getUniqueKey() } title={ itemArray[0].name } alt=""/> </>
             }) }
         </div>
     )

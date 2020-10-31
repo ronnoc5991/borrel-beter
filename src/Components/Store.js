@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Plank from './Plank'
 import { db } from '../firebase' 
-import Towel from '../towel.png'
 
 function Store(props) {
 
@@ -77,16 +76,16 @@ function Store(props) {
 
             <div className="store-title">
                 
-                {/* <div className="towel">
-                    <img src={ Towel } alt=""/>
-                </div> */}
-                
                 <div className="title">
-                    Borrel Beter
+                    <div className="title-border"></div>
+                    <h1>Borrel Beter</h1>
+                    <div className="sub-title">
+                        Plankjes, Hapjes en meer
+                    </div>
                 </div>
 
                 <div className="see-plankjes-button" onClick={ () => scroll(0) }>
-                    Get a Plankje
+                    See Plankjes
                 </div>
             </div>
 

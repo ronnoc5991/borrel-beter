@@ -46,6 +46,12 @@ function CustomPlank(props) {
         setInSetUp(false);
     }
 
+    function addToMainCart () {
+        if (miniCart.length) {
+            props.addItem(miniCart)
+        }
+    }
+
     return (
         <div className="CustomPlank" >
 
@@ -61,7 +67,7 @@ function CustomPlank(props) {
                 </div>
             </Link>
             
-            <div className="add-plank" onClick={ () => props.addItem(miniCart) } >
+            <div className="add-plank" onClick={ addToMainCart } >
                 Add to Cart
             </div>
 
