@@ -31,7 +31,7 @@ function CartSidePanel(props) {
             </div>
 
             { props.cart.map((itemArray) => {
-                return <> <hr></hr> <img src={ itemArray[0].imageUrl } key ={ getUniqueKey() } title={ itemArray[0].name } alt=""/> </>
+                return <React.Fragment key ={ getUniqueKey() }> <hr></hr> <img src={ itemArray[0].imageUrl } title={ itemArray[0].name } alt=""/> </React.Fragment>
             }) }
         </div>
     )

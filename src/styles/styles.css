@@ -735,6 +735,23 @@ a, a:visited, a:active {
           transform: translate(-50%, -50%);
 }
 
+.CustomPlank .added-plank {
+  font-size: 18px;
+  position: absolute;
+  top: -10vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: var(--green);
+  width: 140px;
+  padding: 2vmin;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 10;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .CustomPlank .walkthrough-container {
   position: absolute;
   top: 40%;
@@ -789,6 +806,8 @@ a, a:visited, a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -801,6 +820,7 @@ a, a:visited, a:active {
 .plank-container #plank-image {
   max-width: 100%;
   max-height: 100%;
+  position: absolute;
 }
 
 .Drawers {
@@ -884,7 +904,7 @@ a, a:visited, a:active {
 }
 
 .draggable {
-  position: absolute;
+  position: relative;
   height: 15vmin;
   display: -webkit-box;
   display: -ms-flexbox;

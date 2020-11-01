@@ -6,6 +6,9 @@ function CustomPlank(props) {
 
     const [miniCart, setMiniCart] = useState([]);
     const [inSetUp, setInSetUp] = useState(true);
+    const [added, setAdded] = useState(false);
+
+    // [ item, positionY, positionY ]
 
     let container = useRef(null);
     let walkthrough = useRef(null);
@@ -21,21 +24,15 @@ function CustomPlank(props) {
         setMiniCart([...miniCart, item])
     }
 
-    function createDraggables (name) {
+    function createDraggable () {
         Draggable.create('.draggable', { //eslint-disable-line
             bounds: container,
-            onDragEnd: () => {
-                let distanceFromTop = document.getElementById(`${name}`).getBoundingClientRect().top
-                let distanceFromLeft = document.getElementById(`${name}`).getBoundingClientRect().left
-                console.log(distanceFromTop);
-                console.log(distanceFromLeft);
-            },
         })
     }
 
     useEffect(() => {
         if (miniCart.length > 0) {
-            createDraggables(miniCart[0].name)
+            createDraggable()
         }
     }, )
 
@@ -43,9 +40,9 @@ function CustomPlank(props) {
         return '_' + Math.random().toString(36).substr(2, 9);
     }
 
-    function removeItemFromCart (itemName) {
-        let newMiniCart = miniCart.filter((item) => {
-        return item.name !== itemName
+    function removeItemFromCart (item) {
+        let newMiniCart = miniCart.filter((items) => {
+        return items.name !== item.name
         })
         setMiniCart(newMiniCart);
     }
@@ -57,6 +54,7 @@ function CustomPlank(props) {
     function addToMainCart () {
         if (miniCart.length) {
             props.addItem(miniCart)
+            setAdded(true)
         }
     }
 
@@ -75,9 +73,16 @@ function CustomPlank(props) {
                 </div>
             </Link>
             
-            <div className="add-plank" onClick={ addToMainCart } ref={ el => { addToCart = el } }>
-                Add to Cart
-            </div>
+            { added ? 
+                <div className="added-plank">
+                    Added To Cart!
+                </div>
+                :
+                <div className="add-plank" onClick={ addToMainCart } ref={ el => { addToCart = el } }>
+                    Add to Cart
+                </div>
+            }
+
 
             { inSetUp && 
                 <div className="walkthrough-container" ref={ el => { walkthrough = el } }>
@@ -98,9 +103,9 @@ function CustomPlank(props) {
                 <img id="plank-image" src="https://firebasestorage.googleapis.com/v0/b/borrelbeter.appspot.com/o/RectanglePlank.png?alt=media&token=f6f2cd77-1e30-4f31-93bd-e1a2f7adc361" alt=""/>
 
                 { miniCart && miniCart.map((item) => {
-                    return <div className="draggable" id={`${item.name}`}  key={ getUniqueKey() }>
+                    return <div className="draggable"  key={ getUniqueKey() }>
                         <img src={ item.imageUrl } alt=""/>
-                        <div className="delete-button" onClick={ () => { removeItemFromCart(item.name) } } ><i className="fa fa-lg fa-trash"></i></div>
+                        <div className="delete-button" onClick={ () => { removeItemFromCart(item) } } ><i className="fa fa-lg fa-trash"></i></div>
                     </div>
                 }) }
             </div>

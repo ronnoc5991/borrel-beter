@@ -578,6 +578,22 @@ a, a:visited, a:active {
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
+	
+	.added-plank {
+		font-size: 18px;
+		position: absolute;
+		top: -10vh;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: var(--green);
+		width: 140px;
+		padding: 2vmin;
+		border-radius: 5px;
+		text-align: center;
+		z-index: 10;
+		white-space: nowrap;
+		font-family: 'Montserrat', sans-serif;
+	}
 
 	.walkthrough-container {
 		position: absolute;
@@ -624,6 +640,7 @@ a, a:visited, a:active {
 	top: 12vh;
 	left: 10vw;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	opacity: 0;
@@ -631,6 +648,7 @@ a, a:visited, a:active {
 	#plank-image {
 		max-width: 100%;
 		max-height: 100%;
+		position: absolute;
 	}
 }
 
@@ -704,7 +722,7 @@ a, a:visited, a:active {
 }
 
 .draggable {
-	position: absolute;
+	position: relative;
 	height: 15vmin;
 	display: flex;
 	justify-content: center;
