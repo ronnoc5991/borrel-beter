@@ -8,6 +8,14 @@ function CustomPlank(props) {
     const [inSetUp, setInSetUp] = useState(true);
 
     let container = useRef(null);
+    let walkthrough = useRef(null);
+    let addToCart = useRef(null);
+
+    useEffect(() => {
+        gsap.to(walkthrough, {opacity: 1, duration: 1, delay: .5}) //eslint-disable-line
+        gsap.to(container, {opacity: 1, duration: 1, delay: .5}) //eslint-disable-line
+        gsap.to(addToCart, {y: '18vh', duration: 1.5, delay: .5}) //eslint-disable-line
+    }, [])
 
     function addItemToMiniCart (item) {
         setMiniCart([...miniCart, item])
@@ -67,12 +75,12 @@ function CustomPlank(props) {
                 </div>
             </Link>
             
-            <div className="add-plank" onClick={ addToMainCart } >
+            <div className="add-plank" onClick={ addToMainCart } ref={ el => { addToCart = el } }>
                 Add to Cart
             </div>
 
             { inSetUp && 
-                <div className="walkthrough-container">
+                <div className="walkthrough-container" ref={ el => { walkthrough = el } }>
                     <h1>Step One:</h1>
                     <h2>Select the items you want below</h2>
                     <br/>
@@ -105,7 +113,3 @@ function CustomPlank(props) {
 }
 
 export default CustomPlank
-
-//each draggable should be created with the coordinates that are stored with it...
-// upon creation, they should be placed in those coordinates
-// update this state on dragend

@@ -9,6 +9,8 @@ function Store(props) {
     const [activePlank, setActivePlank] = useState(null);
 
     let smallNav = useRef(null);
+    let title = useRef(null);
+    let seePlankjes = useRef(null);
 
     useEffect(() => {
         let plankjesArray = [];
@@ -19,8 +21,11 @@ function Store(props) {
             })
             setPlankjes(plankjesArray);
         })
-        changeActivePlank();
-        gsap.to(smallNav, {opacity: 1, duration: 1, delay: .5}); //eslint-disable-line
+        // changeActivePlank();
+        const tl = gsap.timeline(); //eslint-disable-line
+        tl.to(title, {opacity: 1, duration: 1, delay: 1}); //eslint-disable-line
+        tl.to(seePlankjes, {opacity: 1, duration: .5}); //eslint-disable-line
+        tl.to(smallNav, {opacity: 1, duration: .5}); //eslint-disable-line
     }, [])
 
     useEffect(() => {
@@ -46,14 +51,6 @@ function Store(props) {
         gsap.to(window, {duration: 1, scrollTo: {y: 0, x: getPXValue(plankNumber * 100 + 100)} }) //eslint-disable-line
     }
 
-    // function checkCart (item) {
-    //     if (props.cart.includes(item)) {
-    //         return true
-    //     } else {
-    //         return false
-    //     }
-    // }
-
     function checkCart (item) {
         let exists = false;  //loop through cart and find if an array with this item object already exists
         for (let i = 0; i < props.cart.length; i++) {
@@ -63,7 +60,6 @@ function Store(props) {
         }
         return exists;
       }
-    
 
     return (
         <div className="Store" >
@@ -76,7 +72,7 @@ function Store(props) {
 
             <div className="store-title">
                 
-                <div className="title">
+                <div className="title" ref={ el => { title = el } }>
                     <div className="title-border"></div>
                     <h1>Borrel Beter</h1>
                     <div className="sub-title">
@@ -84,7 +80,7 @@ function Store(props) {
                     </div>
                 </div>
 
-                <div className="see-plankjes-button" onClick={ () => scroll(0) }>
+                <div className="see-plankjes-button" onClick={ () => scroll(0) } ref={ el => { seePlankjes = el } } >
                     See Plankjes
                 </div>
             </div>

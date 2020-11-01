@@ -60,7 +60,7 @@ a, a:visited, a:active {
 * {
   --orange: #F2542D;
   --blue: #18206F;
-  --yellow: #FFBA08;
+  --yellow: #F5CB5C;
   --green: #003928;
   --red: #d22328;
   --red-orange: #cf3f1c;
@@ -90,7 +90,6 @@ a, a:visited, a:active {
   top: 2vh;
   left: 2vh;
   background-color: var(--orange);
-  background-color: #5330c8;
   height: 8vh;
   width: 8vh;
   border-radius: 50%;
@@ -341,7 +340,7 @@ a, a:visited, a:active {
 }
 
 .Cart .checkout-button {
-  background: var(--green);
+  background: var(--orange);
   font-weight: bold;
   color: white;
   border-radius: 1vmin;
@@ -560,6 +559,7 @@ a, a:visited, a:active {
       -ms-flex-align: center;
           align-items: center;
   font-family: 'Spectral SC', serif;
+  opacity: 0;
 }
 
 .sub-title {
@@ -590,6 +590,7 @@ a, a:visited, a:active {
   white-space: nowrap;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  opacity: 0;
 }
 
 .store-nav {
@@ -708,7 +709,7 @@ a, a:visited, a:active {
 .add-plank {
   margin: 0 auto;
   width: 120px;
-  background-color: var(--yellow);
+  background-color: var(--orange);
   color: white;
   padding: 2vmin;
   border-radius: 5px;
@@ -728,7 +729,7 @@ a, a:visited, a:active {
 .CustomPlank .add-plank {
   font-size: 18px;
   position: absolute;
-  top: 5vh;
+  top: -10vh;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -742,11 +743,13 @@ a, a:visited, a:active {
           transform: translate(-50%, -50%);
   z-index: 50;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--blue);
   padding: 3vmin 5vmin;
   border-radius: 2vmin;
   line-height: 1.5em;
   width: 280px;
+  opacity: 0;
 }
 
 .CustomPlank .walkthrough-container h1 {
@@ -754,6 +757,7 @@ a, a:visited, a:active {
 }
 
 .CustomPlank .walkthrough-container .ok-button {
+  color: white;
   width: 80px;
   padding: 1vmin 2vmin;
   display: -webkit-box;
@@ -768,7 +772,7 @@ a, a:visited, a:active {
   border-radius: 5px;
   margin: 5vh auto auto auto;
   cursor: pointer;
-  background-color: var(--yellow);
+  background-color: var(--orange);
 }
 
 .CustomPlank .walkthrough-container .ok-button:hover {
@@ -791,6 +795,7 @@ a, a:visited, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0;
 }
 
 .plank-container #plank-image {
@@ -801,7 +806,7 @@ a, a:visited, a:active {
 .Drawers {
   position: fixed;
   left: 0;
-  top: 80vh;
+  bottom: -25vh;
   height: 20vh;
   width: 100vw;
   -webkit-box-sizing: border-box;

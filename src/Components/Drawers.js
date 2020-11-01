@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Beers from './Beers'
 import Cheeses from './Cheeses'
 import Meats from './Meats'
@@ -9,6 +9,13 @@ function Drawers(props) {
 
     const [drawers, setDrawers] = useState([true, false, false, false, false]);
 
+    let drawersDiv = useRef(null);
+
+    useEffect(() => {
+        const tl = gsap.timeline(); //eslint-disable-line
+        tl.to(drawersDiv, {y: '-25vh', duration: 1, delay: .5})
+    }, [])
+
     function openDrawer (drawer, currentState) { //each child compenent has to know its own place in the draweropen state
         let newDrawers = [false, false, false, false];
         newDrawers[drawer] = !currentState;
@@ -16,7 +23,7 @@ function Drawers(props) {
     }
 
     return (
-        <div className="Drawers">
+        <div className="Drawers" ref={ el => { drawersDiv = el } }>
             <div className="drawer-container">
                 <div className="drawer-titles">
                     <div className="drawer-title beer" onClick={ () => openDrawer(0, drawers[0]) }>
