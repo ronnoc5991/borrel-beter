@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a84584fc8d66a7df807e672a61acda18",
+    "revision": "57f4df1f49f9e562119f23c7e9499c42",
     "url": "/borrel-beter/index.html"
   },
   {
-    "revision": "d4cba0b5765202d0a0cd",
-    "url": "/borrel-beter/static/css/main.a8f0450f.chunk.css"
+    "revision": "dba98590e474113023c8",
+    "url": "/borrel-beter/static/css/main.08467ae4.chunk.css"
   },
   {
-    "revision": "1161629afb248fc21137",
-    "url": "/borrel-beter/static/js/2.944f0b6f.chunk.js"
+    "revision": "e41740839b47686d73a8",
+    "url": "/borrel-beter/static/js/2.2e31e5c3.chunk.js"
   },
   {
     "revision": "b01cf20ee08477db845d02c3b279da13",
-    "url": "/borrel-beter/static/js/2.944f0b6f.chunk.js.LICENSE.txt"
+    "url": "/borrel-beter/static/js/2.2e31e5c3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d4cba0b5765202d0a0cd",
-    "url": "/borrel-beter/static/js/main.7b4cc77a.chunk.js"
+    "revision": "dba98590e474113023c8",
+    "url": "/borrel-beter/static/js/main.0c1c2baa.chunk.js"
   },
   {
     "revision": "e95234136659b2a88610",
